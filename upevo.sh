@@ -11,13 +11,13 @@ fi
 
 if ls out/target/product/*/*.zip >/dev/null 2>&1; then
 
-rm -rf blossom_lineage
-git clone https://$GH_TOKEN@github.com//xc112lg/blossom_lineage
+rm -rf evolutiion_lgg6
+git clone https://$GH_TOKEN@github.com//xc112lg/evolutiion_lgg6
 
 #cd -
 #rm -rf blossom_lunaris/*.img blossom_lunaris/*.zip blossom_lunaris/*.tar
 #cp out/target/product/*/recovery.img blossom_lunaris
-cp out/target/product/*/*.zip blossom_lineage/
+cp out/target/product/*/*.zip evolutiion_lgg6/
 # echo "test" > blossom_lunaris/dummy.txt
 
 # Create the zip
@@ -25,8 +25,8 @@ cp out/target/product/*/*.zip blossom_lineage/
 
 # Check size
 # ls -lh blossom_lunaris/test.zip
-cp out/target/product/*/*.tar blossom_lineage
-cd blossom_lineage
+cp out/target/product/*/*.tar evolutiion_lgg6
+cd evolutiion_lgg6
 chmod +x multi_upload3.sh
 ./multi_upload3.sh > /dev/null
 else
