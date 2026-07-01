@@ -27,6 +27,7 @@ cp out/target/product/*/*.zip evolutiion_lgg6/
 # ls -lh blossom_lunaris/test.zip
 cp out/target/product/*/*.tar evolutiion_lgg6
 cd evolutiion_lgg6
+rm *-ota.zip
 chmod +x multi_upload3.sh
 ./multi_upload3.sh > /dev/null
 else
