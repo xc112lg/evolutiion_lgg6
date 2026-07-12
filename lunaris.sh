@@ -56,7 +56,7 @@ lunch lineage_h872-bp4a-userdebug
 
 
 make installclean
-m bacon
+m evolution
 
 # lunch lineage_h870-bp1a-userdebug
 
