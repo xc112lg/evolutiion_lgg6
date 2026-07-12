@@ -4,7 +4,7 @@
 
 
 rm -rf .repo/local_manifests/
-
+rm -rf device/lge
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
 repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs --depth=1
 # repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs --depth=1
