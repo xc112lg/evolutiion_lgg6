@@ -48,7 +48,7 @@ sed -i '/<\/compatibility-matrix>/i\
             <instance>default</instance>\
         </interface>\
     </hal>' device/lge/msm8996-common/framework_compatibility_matrix.xml
-
+sed -i '167a TARGET_USES_HARDWARE_QCOM_WLAN := false' device/lge/msm8996-common/BoardConfigCommon.mk
 #lunch lineage_h872-bp1a-userdebug
 lunch lineage_h872-bp4a-userdebug
 
