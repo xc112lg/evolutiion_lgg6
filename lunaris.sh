@@ -50,6 +50,7 @@ sed -i '/<\/compatibility-matrix>/i\
     </hal>' device/lge/msm8996-common/framework_compatibility_matrix.xml
 sed -i '167a TARGET_USES_HARDWARE_QCOM_WLAN := false' device/lge/msm8996-common/BoardConfigCommon.mk
 echo 'PRODUCT_SOURCE_ROOT_DIRS += -hardware/qcom-caf/wlan/qcwcn/config' >> device/lge/msm8996-common/msm8996.mk
+sed -i 's/vendor.lineage.livedisplay@2.0-service-sdm/vendor.lineage.livedisplay-service.sdm/' device/lge/msm8996-common/msm8996.mk
 #lunch lineage_h872-bp1a-userdebug
 lunch lineage_h872-bp4a-userdebug
 
