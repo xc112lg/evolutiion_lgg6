@@ -8,7 +8,7 @@ rm -rf .repo/local_manifests/
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
 repo init -u https://github.com/Lunaris-AOSP/android -b 16.2 --git-lfs --depth=1
 # repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs --depth=1
-git clone https://github.com/xc112lg/local_manifests --depth 1 -b lg .repo/local_manifests
+git clone https://github.com/xc112lg/local_manifests --depth 1 -b lg2 .repo/local_manifests
 repo sync -c -j32 --force-sync --no-clone-bundle --no-tags
 /opt/crave/resync.sh
 # export TARGET_USES_PICO_GAPPS=true
