@@ -28,29 +28,10 @@ source build/envsetup.sh
 
 perl -0777 -pi -e 's/^cc_prebuilt_library_shared \{\n\tname: "libwifi-hal-ctrl",.*?\n\}\n\n?//ms' vendor/lge/msm8996-common/Android.bp
 sed -i 's/libbinder-v32/libbinder/g; s/libprotobuf-cpp-lite-v29/libprotobuf-cpp-lite/g' vendor/lge/msm8996-common/Android.bp
-sed -i '/^vendor\/lib\/libwifi-hal-ctrl\.so|/s/^/-/' device/lge/msm8996-common/proprietary-files.txt
-sed -i '/^vendor\/lib64\/libwifi-hal-ctrl\.so|/s/^/-/' device/lge/msm8996-common/proprietary-files.txt
-sed -i '/vendor\/lineage\/config\/device_framework_matrix.xml/d; s|hardware/qcom-caf/common/vendor_framework_compatibility_matrix_legacy.xml \\|hardware/qcom-caf/common/vendor_framework_compatibility_matrix_legacy.xml|' device/lge/msm8996-common/BoardConfigCommon.mk
-
-sed -i '/<\/compatibility-matrix>/i\
-    <hal format="hidl" optional="true">\
-        <name>vendor.lineage.livedisplay</name>\
-        <version>2.0</version>\
-        <interface>\
-            <name>IPictureAdjustment</name>\
-            <instance>default</instance>\
-        </interface>\
-    </hal>\
-    <hal format="aidl" optional="true">\
-        <name>vendor.lineage.health</name>\
-        <interface>\
-            <name>IChargingControl</name>\
-            <instance>default</instance>\
-        </interface>\
-    </hal>' device/lge/msm8996-common/framework_compatibility_matrix.xml
-sed -i '167a TARGET_USES_HARDWARE_QCOM_WLAN := false' device/lge/msm8996-common/BoardConfigCommon.mk
-echo 'PRODUCT_SOURCE_ROOT_DIRS += -hardware/qcom-caf/wlan/qcwcn/config' >> device/lge/msm8996-common/msm8996.mk
-sed -i 's/vendor.lineage.livedisplay@2.0-service-sdm/vendor.lineage.livedisplay-service.sdm/' device/lge/msm8996-common/msm8996.mk
+sed -i \
+  -e 's/^static void\* spkr_calibration_thread()$/static void* spkr_calibration_thread(void *context)/' \
+  -e 's/^static void\* spkr_v_vali_thread()$/static void* spkr_v_vali_thread(void *context)/' \
+  hardware/qcom-caf/msm8996/audio/hal/audio_extn/spkr_protection.c
 #lunch lineage_h872-bp1a-userdebug
 lunch lineage_h872-bp4a-userdebug
 
