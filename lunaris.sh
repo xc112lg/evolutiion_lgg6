@@ -32,6 +32,10 @@ sed -i \
   -e 's/^static void\* spkr_calibration_thread()$/static void* spkr_calibration_thread(void *context)/' \
   -e 's/^static void\* spkr_v_vali_thread()$/static void* spkr_v_vali_thread(void *context)/' \
   hardware/qcom-caf/msm8996/audio/hal/audio_extn/spkr_protection.c
+
+sed -i '/LOCAL_MODULE       := init.radio.sh/,/include \$(BUILD_PREBUILT)/{
+  s/LOCAL_VENDOR_MODULE    := true/LOCAL_VENDOR_MODULE    := true\nLOCAL_CHECK_ELF_FILES := false/
+}' device/lge/g6-common/rootdir/Android.mk
 #lunch lineage_h872-bp1a-userdebug
 lunch lineage_h872-bp4a-userdebug
 
