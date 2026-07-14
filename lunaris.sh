@@ -26,8 +26,20 @@ source build/envsetup.sh
 
 
 
+# perl -0777 -pi -e 's/^cc_prebuilt_library_shared \{\n\tname: "libwifi-hal-ctrl",.*?\n\}\n\n?//ms' vendor/lge/msm8996-common/Android.bp
+# sed -i 's/libbinder-v32/libbinder/g; s/libprotobuf-cpp-lite-v29/libprotobuf-cpp-lite/g' vendor/lge/msm8996-common/Android.bp
+# sed -i '/name: "libkeystore_binder",/,/^	}/{
+#   s/prefer: true,/prefer: true,\n\tcheck_elf_files: false,/
+# }' vendor/lge/msm8996-common/Android.bp
+
 perl -0777 -pi -e 's/^cc_prebuilt_library_shared \{\n\tname: "libwifi-hal-ctrl",.*?\n\}\n\n?//ms' vendor/lge/msm8996-common/Android.bp
+
 sed -i 's/libbinder-v32/libbinder/g; s/libprotobuf-cpp-lite-v29/libprotobuf-cpp-lite/g' vendor/lge/msm8996-common/Android.bp
+
+sed -i '/name: "libkeystore_binder",/,/^}$/{
+  s/prefer: true,/prefer: true,\n\tcheck_elf_files: false,/
+}' vendor/lge/msm8996-common/Android.bp
+
 sed -i \
   -e 's/^static void\* spkr_calibration_thread()$/static void* spkr_calibration_thread(void *context)/' \
   -e 's/^static void\* spkr_v_vali_thread()$/static void* spkr_v_vali_thread(void *context)/' \
