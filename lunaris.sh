@@ -51,7 +51,7 @@ sed -i '/LOCAL_MODULE       := init.radio.sh/,/include \$(BUILD_PREBUILT)/{
 #lunch lineage_h872-bp1a-userdebug
 lunch lineage_h872-bp4a-userdebug
 
-
+make clean
 make installclean
 m evolution
 
