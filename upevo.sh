@@ -12,7 +12,7 @@ fi
 if ls out/target/product/*/*.zip >/dev/null 2>&1; then
 
 rm -rf evolutiion_lgg6
-git clone https://$GH_TOKEN@github.com//xc112lg/evolutiion_lgg6
+git clone https://$GH_TOKEN@github.com/xc112lg/evolutiion_lgg6
 
 #cd -
 #rm -rf blossom_lunaris/*.img blossom_lunaris/*.zip blossom_lunaris/*.tar
