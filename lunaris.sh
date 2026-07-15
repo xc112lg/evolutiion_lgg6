@@ -60,8 +60,6 @@ sed -i '/LOCAL_MODULE       := init.radio.sh/,/include \$(BUILD_PREBUILT)/{
 }' device/lge/g6-common/rootdir/Android.mk
 #lunch lineage_h872-bp1a-userdebug
 lunch lineage_h872-bp4a-userdebug
-
-make clean
 make installclean
 m evolution
 
