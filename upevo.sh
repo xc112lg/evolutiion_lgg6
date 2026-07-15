@@ -19,6 +19,7 @@ git clone https://$GH_TOKEN@github.com/xc112lg/evolutiion_lgg6
 #cp out/target/product/*/recovery.img blossom_lunaris
 rm out/target/product/*/*-ota.zip
 cp out/target/product/*/*.zip evolutiion_lgg6/
+cp out/target/product/*/*.img evolutiion_lgg6/
 # echo "test" > blossom_lunaris/dummy.txt
 
 # Create the zip
