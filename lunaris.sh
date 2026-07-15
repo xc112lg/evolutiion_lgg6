@@ -41,6 +41,15 @@ sed -i '/name: "libkeystore_binder",/,/^}$/{
   s/prefer: true,/prefer: true,\n\tcheck_elf_files: false,/
 }' vendor/lge/msm8996-common/Android.bp
 
+
+sed -i '/name: "libwvdrmengine",/,/^}$/{
+  s/prefer: true,/prefer: true,\n\tcheck_elf_files: false,/
+}' vendor/lge/msm8996-common/Android.bp
+
+sed -i '/name: "libwvhidl",/,/^}$/{
+  s/prefer: true,/prefer: true,\n\tcheck_elf_files: false,/
+}' vendor/lge/msm8996-common/Android.bp
+
 sed -i \
   -e 's/^static void\* spkr_calibration_thread()$/static void* spkr_calibration_thread(void *context)/' \
   -e 's/^static void\* spkr_v_vali_thread()$/static void* spkr_v_vali_thread(void *context)/' \
