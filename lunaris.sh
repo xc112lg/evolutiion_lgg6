@@ -59,7 +59,7 @@ sed -i '/LOCAL_MODULE       := init.radio.sh/,/include \$(BUILD_PREBUILT)/{
   s/LOCAL_VENDOR_MODULE    := true/LOCAL_VENDOR_MODULE    := true\nLOCAL_CHECK_ELF_FILES := false/
 }' device/lge/g6-common/rootdir/Android.mk
 #lunch lineage_h872-bp1a-userdebug
-lunch lineage_h872-bp4a-userdebug
+lunch lineage_h872-bp4a-eng
 make installclean
 m evolution
 
