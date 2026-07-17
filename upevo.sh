@@ -9,17 +9,6 @@ else
     echo "⚠ .env file not found"
 fi
 
-source build/envsetup.sh
-lunch lineage_h870-bp1a-userdebug
-
-make installclean
-m evolution
-
-lunch lineage_us997-bp1a-userdebug
-
-make installclean
-m evolution
-
 if ls out/target/product/*/*.zip >/dev/null 2>&1; then
 
 rm -rf evolutiion_lgg6
