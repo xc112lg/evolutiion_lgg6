@@ -11,7 +11,7 @@
 #   ./am-force-theirs.sh /tmp/src/android/kk/android_kernel_lge_msm8996_r2 \
 #     https://github.com/LineageOS/android_kernel_lge_msm8996/commit/4631bada94ae79e3a12c51eb74c751b14fed3b80.patch
 
-set -uo pipefail
+#set -uo pipefail
 
 REPO="${1:?Usage: $0 <repo_path> <patch_url>}"
 PATCH_URL="${2:?Usage: $0 <repo_path> <patch_url>}"
