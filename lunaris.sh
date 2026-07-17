@@ -6,6 +6,7 @@
 rm -rf .repo/local_manifests/
 rm -rf device/lge
 rm -rf vendor/lge/msm8996-common
+rm -rf vendor/evolution-priv
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
 repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs --depth=1
 # repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs --depth=1
@@ -58,8 +59,12 @@ sed -i \
 sed -i '/LOCAL_MODULE       := init.radio.sh/,/include \$(BUILD_PREBUILT)/{
   s/LOCAL_VENDOR_MODULE    := true/LOCAL_VENDOR_MODULE    := true\nLOCAL_CHECK_ELF_FILES := false/
 }' device/lge/g6-common/rootdir/Android.mk
+git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/evolution-priv/keys
+cd vendor/evolution-priv/keys
+./keys.sh
+cd -
+#sed -i '$a -include vendor/evolution-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk\
 
-sed -i '$a -include vendor/evolution-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
 #lunch lineage_h872-bp1a-userdebug
 lunch lineage_h872-bp4a-eng
 make installclean
