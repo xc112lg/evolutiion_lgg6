@@ -19,6 +19,7 @@ repo sync -c -j32 --force-sync --no-clone-bundle --no-tags
 # export SELINUX_IGNORE_NEVERALLOWS=true
 export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
+sed -i '$a -include vendor/evolution-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
 
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/scripts/refs/heads/lunaris/rbe8.sh)  >/dev/null 2>&1
 source build/envsetup.sh
