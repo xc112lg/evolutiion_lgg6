@@ -44,7 +44,6 @@ curl -L https://github.com/xc112lg/android_kernel_lge_msm8996_r2/commit/6b1379d0
 curl -L https://github.com/xc112lg/android_kernel_lge_msm8996_r2/commit/2baa4f2618674cefdda9cb58d2ecd1978200160b.patch | git am
 curl -L https://github.com/xc112lg/android_kernel_lge_msm8996_r2/commit/ba626e00d9d09c0da612d3b08926a6edbed2d104.patch | git am
 git push
-curl -L https://github.com/xc112lg/android_kernel_lge_msm8996_r2/commit/4382f37b8d2f1d4780e8b4e0d414952832cc0034.patch | git am
 curl -L https://github.com/xc112lg/android_kernel_lge_msm8996_r2/commit/dfd0b2ecc493fdf3cd2dcf74cb488fed970d5b22.patch | git am
 curl -L https://github.com/xc112lg/android_kernel_lge_msm8996_r2/commit/4b491d3bbb15c3aa48955a003925b56510354607.patch | git am
 curl -L https://github.com/xc112lg/android_kernel_lge_msm8996_r2/commit/3cb4add2ccb3c4ae17e56b0e096b72e82282c39b.patch | git am
