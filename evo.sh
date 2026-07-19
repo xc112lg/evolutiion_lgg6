@@ -28,7 +28,7 @@ source build/envsetup.sh
 
 
 
-lunch lineage_h872-bp1a-userdebug
+lunch lineage_h872-bp1a-user
 #lunch lineage_h872-bp4a-userdebug
 make installclean
 m evolution
