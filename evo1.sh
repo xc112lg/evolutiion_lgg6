@@ -4,7 +4,8 @@ export TARGET_USES_PICO_GAPPS=true
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/scripts/refs/heads/lunaris/rbe8.sh)  >/dev/null 2>&1
 source build/envsetup.sh
 
-
+sed -i '4a type sensors_data_file, file_type, data_file_type;' device/lge/msm8996-common/sepolicy/vendor/file.te
+cat  device/lge/msm8996-common/sepolicy/vendor/file.te
 
 
 lunch lineage_h872-bp1a-user
