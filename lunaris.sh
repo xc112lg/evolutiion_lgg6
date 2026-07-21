@@ -61,11 +61,11 @@ sed -i '/LOCAL_MODULE       := init.radio.sh/,/include \$(BUILD_PREBUILT)/{
   s/LOCAL_VENDOR_MODULE    := true/LOCAL_VENDOR_MODULE    := true\nLOCAL_CHECK_ELF_FILES := false/
 }' device/lge/g6-common/rootdir/Android.mk
 
-rm -rf vendor/evolution-priv/keys
-git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/evolution-priv/keys
-cd vendor/evolution-priv/keys
-./keys.sh
-cd -
+# rm -rf vendor/evolution-priv/keys
+# git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/evolution-priv/keys
+# cd vendor/evolution-priv/keys
+# ./keys.sh
+# cd -
 
 
 #sed -i '$a -include vendor/evolution-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk\
