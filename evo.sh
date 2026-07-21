@@ -5,7 +5,7 @@
 
 rm -rf .repo/local_manifests/
 rm -rf device/lge
-#rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
+rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
 rm -rf vendor/evolution-priv/keys
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
