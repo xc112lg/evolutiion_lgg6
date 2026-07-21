@@ -5,7 +5,8 @@
 
 rm -rf .repo/local_manifests/
 rm -rf device/lge
-rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
+#rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
+rm -rf vendor/evolution-priv/keys
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
 #repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs --depth=1
@@ -34,15 +35,15 @@ lunch lineage_h872-bp1a-user
 make installclean
 m evolution
 
-# lunch lineage_h870-bp1a-userdebug
+lunch lineage_h870-bp1a-userdebug
 
-# make installclean
-# m evolution -j64
+make installclean
+m evolution
 
-# lunch lineage_us997-bp1a-userdebug
+lunch lineage_us997-bp1a-userdebug
 
-# make installclean
-# m evolution -j64
+make installclean
+m evolution
 
 #lunch lineage_h872-bp4a-eng
 #make installclean
