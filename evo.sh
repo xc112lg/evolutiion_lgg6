@@ -21,6 +21,16 @@ repo sync -c -j32 --force-sync --no-clone-bundle --no-tags
 export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
 sed -i '$a -include vendor/evolution-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
+
+mkdir -p device/lge/msm8996-common/sepolicy/vendor-user
+echo 'type sensors_data_file, file_type, data_file_type;' > device/lge/msm8996-common/sepolicy/vendor-user/file.te
+grep -q "sepolicy/vendor-user" device/lge/msm8996-common/BoardConfigCommon.mk || cat >> device/lge/msm8996-common/BoardConfigCommon.mk << 'EOF'
+
+ifeq ($(TARGET_BUILD_VARIANT),user)
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor-user
+endif
+EOF
+
 #sed -i '4a type sensors_data_file, file_type, data_file_type;' device/lge/msm8996-common/sepolicy/vendor/file.te
 cat  device/lge/msm8996-common/sepolicy/vendor/file.te
 
