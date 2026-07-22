@@ -137,9 +137,10 @@ for file_entry in "${FILE_ENTRIES[@]}"; do
     # Only show label and links, NO filename anywhere
     DOWNLOADS_SECTION+="
 🔹 ${label} - ${download_links} (${size})"
+
+done
 DOWNLOADS_SECTION+="
 🔹 🎯 GApps Package <a href=\"https://sourceforge.net/projects/nikgapps/files/Releases/Android-16/\">SourceForge</a>"
-done
 
 DOWNLOADS_SECTION+="
 
@@ -159,37 +160,25 @@ TELEGRAM_MESSAGE="<b>EvolutionX-16.0 | UNOFFICIAL📱</b>
 
 $DOWNLOADS_SECTION
 
-<b>🐞 Issues:</b>
-• NFC not working
-
-<b>🐞 Fixes:</b>
-• NFC wont spawn on non NFC variant
-• Dolby and Audio 
-• Data unencrypted so you change in recovery directly
-
 <b>📝 Notes:</b>
-• Deleted Sandbox and additional fonts to save more space
 • Work with both core and basic gapps
 • Signed
-• Includes MIUI Camera,Lunari Dolby
-• June security patch
-• Default Kernel Sashimi
+• July security patch
+• Default Kernel Swan
 
 <b>❤️ Credits & Thanks:</b>
-• @HaiKitoo for trees
-• @fukiame for kernel
-• @Yohanyuan for audio fix
+• npjohnson
+• lineageOS dev team
+• ROMSG for kernel
 • @astechpro20 for msg template
-• Yui Onanii, fukiame, @snnbyyds, <a href=\"http://t.me/Sushrut1101\">Sushrut</a>, xiaomi-blossom-dev contributors for base tree
 • Thanks to <a href=\"http://foss.crave.io\">crave.io</a> for server
-• 0kaarun & Yohan Yuan for their help
 • Thanks to all other devs
 
 <b>🌐 Stay Updated:</b>
-📢 @xc112lgblossomupdate
-📢 @xc112lgblossomupdate1
+📢 @LGG6_group
+📢 @LGG6_releases
 
-#blossom #UNOFFICIAL #Evolution-X #lunaridolby #Rom"
+#LGG^ #UNOFFICIAL #Evolution-X #lunaridolby #Rom"
 
 # Send Telegram message with smart fallback
 if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
