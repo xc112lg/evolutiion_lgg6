@@ -113,63 +113,34 @@ for file_entry in "${FILE_ENTRIES[@]}"; do
     url="${remaining%%|*}"
     size="${remaining##*|}"
     
-    # Known device codenames to detect in the filename (add more as needed)
-    known_devices=("h870" "h871" "h872" "h873" "h930" "us997" "ls993" "vs988" "as993")
-    device_code=""
-    filename_lower=$(echo "$filename" | tr '[:upper:]' '[:lower:]')
-    for dev in "${known_devices[@]}"; do
-        if [[ "$filename_lower" == *"$dev"* ]]; then
-            device_code="$dev"
-            break
-        fi
-    done
-
     # Create label based on filename but don't show actual filename
     label="File"
     download_links=""
-
+    
     if [[ "$filename" == *"Vanilla"* ]] || [[ "$filename" == *"vanilla"* ]]; then
-        if [ -n "$device_code" ]; then
-            label="📱 ${device_code} Vanilla ROM"
-        else
-            label="📱 Vanilla ROM"
-        fi
+        label="📱 Vanilla ROM"
         download_links="<a href=\"${url}\">GitHub</a>"
     elif [[ "$filename" == *"GApps"* ]] || [[ "$filename" == *"gapps"* ]]; then
         label="🎯 GApps Package"
         download_links="<a href=\"${url}\">GitHub</a> | <a href=\"https://sourceforge.net/projects/nikgapps/files/Releases/Android-16/\">SourceForge</a>"
     elif [[ "$filename" == *"recovery"* ]] || [[ "$filename" == *"Recovery"* ]]; then
-        if [ -n "$device_code" ]; then
-            label="🔧 ${device_code} Recovery Image"
-        else
-            label="🔧 Recovery Image"
-        fi
+        label="🔧 Recovery Image"
         download_links="<a href=\"${url}\">Download</a>"
     elif [[ "$filename" == *.zip ]]; then
-        if [ -n "$device_code" ]; then
-            label="📦 ${device_code} ROM Package"
-        else
-            label="📦 ROM Package"
-        fi
+        label="📦 ROM Package"
         download_links="<a href=\"${url}\">Download</a>"
     elif [[ "$filename" == *.img ]]; then
-        if [ -n "$device_code" ]; then
-            label="💾 ${device_code} Image File"
-        else
-            label="💾 Image File"
-        fi
+        label="💾 Image File"
         download_links="<a href=\"${url}\">Download</a>"
     fi
-
-    # Only show label and links, NO original full filename anywhere
+    
+    # Only show label and links, NO filename anywhere
     DOWNLOADS_SECTION+="
 🔹 ${label} - ${download_links} (${size})"
 
-    # Add a GApps line after every ROM/recovery entry, same as before
-    DOWNLOADS_SECTION+="
-🔹 🎯 GApps Package <a href=\"https://sourceforge.net/projects/nikgapps/files/Releases/Android-16/\">SourceForge</a>"
-
 done
+DOWNLOADS_SECTION+="
+🔹 🎯 GApps Package <a href=\"https://sourceforge.net/projects/nikgapps/files/Releases/Android-16/\">SourceForge</a>"
 
 DOWNLOADS_SECTION+="
 
