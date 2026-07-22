@@ -165,11 +165,11 @@ for file_entry in "${FILE_ENTRIES[@]}"; do
     DOWNLOADS_SECTION+="
 🔹 ${label} - ${download_links} (${size})"
 
-    # Add a GApps line after every ROM/recovery entry, same as before
-    DOWNLOADS_SECTION+="
-🔹 🎯 GApps Package <a href=\"https://sourceforge.net/projects/nikgapps/files/Releases/Android-16/\">SourceForge</a>"
-
 done
+
+# GApps line shown once, not repeated per entry
+DOWNLOADS_SECTION+="
+🔹 🎯 GApps Package <a href=\"https://sourceforge.net/projects/nikgapps/files/Releases/Android-16/\">SourceForge</a>"
 
 DOWNLOADS_SECTION+="
 
