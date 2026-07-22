@@ -169,7 +169,7 @@ done
 
 # GApps line shown once, not repeated per entry
 DOWNLOADS_SECTION+="
-🔹 🎯 GApps Package <a href=\"https://sourceforge.net/projects/nikgapps/files/Releases/Android-16/\">SourceForge</a>"
+🔹 🎯 GApps Package <a href=\"https://sourceforge.net/projects/nikgapps/files/Releases/Android-15/\">SourceForge</a>"
 
 DOWNLOADS_SECTION+="
 
