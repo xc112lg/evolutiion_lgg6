@@ -171,21 +171,14 @@ done
 DOWNLOADS_SECTION+="
 🔹 🎯 GApps Package <a href=\"https://sourceforge.net/projects/nikgapps/files/Releases/Android-15/\">SourceForge</a>"
 
-DOWNLOADS_SECTION+="
-
-
-<b>📲 <a href=\"https://telegra.ph/flashing-instruction-11-15\">Installation Guide</a></b>"
-
-
 # Create full Telegram message
-TELEGRAM_MESSAGE="<b>EvolutionX-16.0 | UNOFFICIAL📱</b>
+TELEGRAM_MESSAGE="<b>EvolutionX-15.0 | UNOFFICIAL📱</b>
 
 <b>Device:</b>Blossom
 <b>👨‍💻 Builder:</b> <a href=\"http://t.me/xc112lg\">xc112lg</a>
-<b>🤖 Android Version:</b> 16 | QPR2
+<b>🤖 Android Version:</b> 15
 <b>📅 Build Date:</b> $(date '+%d/%m/%y')
 <b>⚙️ <a href=\"$CHANGELOG_URL\">Changelog</a></b>
-<b>📸 <a href=\"https://t.me/xc112lgblossomsc\">Screenshots</a></b>
 
 $DOWNLOADS_SECTION
 
@@ -199,7 +192,6 @@ $DOWNLOADS_SECTION
 • npjohnson
 • lineageOS dev team
 • ROMSG for kernel
-• @astechpro20 for msg template
 • Thanks to <a href=\"http://foss.crave.io\">crave.io</a> for server
 • Thanks to all other devs
 
