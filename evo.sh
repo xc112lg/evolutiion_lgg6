@@ -40,10 +40,10 @@ source build/envsetup.sh
 
 
 
-lunch lineage_h872-bp1a-userdebug
-#lunch lineage_h872-bp4a-userdebug
-make installclean
-m evolution
+# lunch lineage_h872-bp1a-userdebug
+# #lunch lineage_h872-bp4a-userdebug
+# make installclean
+# m evolution
 
 # lunch lineage_h870-bp1a-userdebug
 
@@ -54,6 +54,22 @@ m evolution
 
 # make installclean
 # m evolution
+
+lunch lineage_h872-bp1a-user
+#lunch lineage_h872-bp4a-userdebug
+make installclean
+m evolution
+
+lunch lineage_h870-bp1a-user
+
+make installclean
+m evolution
+
+lunch lineage_us997-bp1a-user
+
+make installclean
+m evolution
+
 
 #lunch lineage_h872-bp4a-eng
 #make installclean
