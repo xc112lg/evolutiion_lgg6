@@ -2,6 +2,22 @@
 # #lunch lineage_h872-bp4a-userdebug
 # make installclean
 # m evolution
+KBUSER=stendro_+_AShiningRay_+_continued_by_xc112lg
+KBHOST=crave
+
+export BUILD_USERNAME=$KBUSER
+export BUILD_HOSTNAME=$KBHOST
+
+export KBUILD_BUILD_USER=$KBUSER
+export KBUILD_BUILD_HOST=$KBHOST
+
+
+echo "USER=$KBUILD_BUILD_USER HOST=$KBUILD_BUILD_HOST"
+echo "USER=$BUILD_USERNAME HOST=$BUILD_HOSTNAME"
+
+
+
+
 source build/envsetup.sh
 # lunch lineage_h870-bp1a-userdebug
 
