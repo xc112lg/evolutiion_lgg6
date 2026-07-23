@@ -56,11 +56,14 @@ source build/envsetup.sh
 
 # make installclean
 # m evolution
+KBUSER=stendro_+_AShiningRay_+_continued_by_xc112lg
+KBHOST=crave.io
+
 export BUILD_USERNAME=stendro_+_AShiningRay_+_continued_by_xc112lg
 export BUILD_HOSTNAME=crave.io
 
-export KBUILD_BUILD_USER=stendro_+_AShiningRay_+_continued_by_xc112lg
-export KBUILD_BUILD_HOST=crave.io
+export KBUILD_BUILD_USER=$KBUSER
+export KBUILD_BUILD_HOST=$KBHOST
 
 
 sed -i 's/^SCO_WBS_SAMPLE_RATE = 0$/SCO_WBS_SAMPLE_RATE = 1/' device/lge/msm8996-common/bluetooth/vnd_lge_msm8996.txt
