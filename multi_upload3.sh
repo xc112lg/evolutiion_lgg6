@@ -114,7 +114,7 @@ for file_entry in "${FILE_ENTRIES[@]}"; do
     size="${remaining##*|}"
     
     # Known device codenames to detect in the filename (add more as needed)
-    known_devices=("h870" "h871" "h872" "h873" "h930" "us997" "ls993" "vs988" "as993")
+    known_devices=("h870" "h870d" "h871" "h872" "h873" "h930" "us997" "ls993" "vs988" "as993")
     device_code=""
     filename_lower=$(echo "$filename" | tr '[:upper:]' '[:lower:]')
     for dev in "${known_devices[@]}"; do
