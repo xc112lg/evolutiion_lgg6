@@ -1,25 +1,4 @@
 
-
-
-
-
-rm -rf .repo/local_manifests/
-rm -rf device/lge
-rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
-rm -rf vendor/evolution-priv/keys
-
-#repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
-#repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs --depth=1
-repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs --depth=1
-git clone https://github.com/xc112lg/local_manifests --depth 1 -b lg .repo/local_manifests
-repo sync -c -j32 --force-sync --no-clone-bundle --no-tags
-/opt/crave/resync.sh
-# export TARGET_USES_PICO_GAPPS=true
-# export TARGET_ENABLE_BLUR=false
-# export WITH_ADB_INSECURE=true
-# export SELINUX_IGNORE_NEVERALLOWS=true
-export WITH_GMS=false
-export TARGET_USES_PICO_GAPPS=true
 sed -i '$a -include vendor/evolution-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
 
 mkdir -p device/lge/msm8996-common/sepolicy/vendor-user
