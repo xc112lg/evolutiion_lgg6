@@ -56,6 +56,9 @@ source build/envsetup.sh
 
 # make installclean
 # m evolution
+
+echo "USER=$BUILD_USERNAME HOST=$BUILD_HOSTNAME"
+
 KBUSER=stendro_+_AShiningRay_+_continued_by_xc112lg
 KBHOST=crave
 
