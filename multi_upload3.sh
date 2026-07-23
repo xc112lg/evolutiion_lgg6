@@ -115,9 +115,11 @@ for file_entry in "${FILE_ENTRIES[@]}"; do
     
     # Known device codenames to detect in the filename (add more as needed)
     known_devices=("h870" "h870d" "h871" "h872" "h873" "h930" "us997" "ls993" "vs988" "as993")
-    device_code=""
-    filename_lower=$(echo "$filename" | tr '[:upper:]' '[:lower:]')
-    for dev in "${known_devices[@]}"; do
+    # sort longest-first so more specific codenames are tried before their prefixes
+    IFS=$'\n' sorted_devices=($(printf '%s\n' "${known_devices[@]}" | awk '{ print length, $0 }' | sort -rn | cut -d' ' -f2-))
+    unset IFS
+
+    for dev in "${sorted_devices[@]}"; do
         if [[ "$filename_lower" == *"$dev"* ]]; then
             device_code="$dev"
             break
