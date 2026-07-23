@@ -43,10 +43,7 @@ sed -i 's/^SCO_WBS_SAMPLE_RATE = 0$/SCO_WBS_SAMPLE_RATE = 1/' device/lge/msm8996
 lunch lineage_h872-bp1a-user
 #lunch lineage_h872-bp4a-userdebug
 make installclean
-export NINJA_ARGS="-j1"
-export USE_GOMA=false
-export USE_RBE=false
-make recovery -j1
+make recovery
 
 
 
