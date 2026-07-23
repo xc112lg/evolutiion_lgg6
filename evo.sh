@@ -56,7 +56,7 @@ source build/envsetup.sh
 
 # make installclean
 # m evolution
-
+sed -i 's/^SCO_WBS_SAMPLE_RATE = 0$/SCO_WBS_SAMPLE_RATE = 1/' device/lge/msm8996-common/bluetooth/vnd_lge_msm8996.txt
 lunch lineage_h872-bp1a-user
 #lunch lineage_h872-bp4a-userdebug
 make installclean
