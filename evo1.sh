@@ -15,6 +15,9 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor-user
 endif
 EOF
 
+export BUILD_USERNAME=stendro_+_AShiningRay_+_continued_by_xc112lg
+export BUILD_HOSTNAME=crave.io
+
 export KBUILD_BUILD_USER=stendro_+_AShiningRay_+_continued_by_xc112lg
 export KBUILD_BUILD_HOST=crave.io
 
