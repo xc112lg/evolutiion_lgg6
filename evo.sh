@@ -82,6 +82,10 @@ BUILD_BROKEN_NINJA_USES_ENV_VAR := KBUILD_BUILD_USER KBUILD_BUILD_HOST BUILD_USE
 EOF
 
 cat device/lge/msm8996-common/BoardConfigCommon.mk
+
+rm -rf packages/apps/ViPER4AndroidFX
+git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX.git packages/apps/ViPER4AndroidFX
+
 lunch lineage_h872-bp1a-user
 #lunch lineage_h872-bp4a-userdebug
 make installclean
