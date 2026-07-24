@@ -72,6 +72,13 @@ export KBUILD_BUILD_HOST=$KBHOST
 echo "USER=$KBUILD_BUILD_USER HOST=$KBUILD_BUILD_HOST"
 echo "USER=$BUILD_USERNAME HOST=$BUILD_HOSTNAME"
 
+
+grep -q "BUILD_BROKEN_NINJA_USES_ENV_VAR" device/lge/msm8996-common/BoardConfigCommon.mk || \
+cat >> device/lge/msm8996-common/BoardConfigCommon.mk << 'EOF'
+
+BUILD_BROKEN_NINJA_USES_ENV_VAR := KBUILD_BUILD_USER KBUILD_BUILD_HOST BUILD_USERNAME BUILD_HOSTNAME
+EOF
+
 sed -i 's/^SCO_WBS_SAMPLE_RATE = 0$/SCO_WBS_SAMPLE_RATE = 1/' device/lge/msm8996-common/bluetooth/vnd_lge_msm8996.txt
 lunch lineage_h872-bp1a-user
 #lunch lineage_h872-bp4a-userdebug
