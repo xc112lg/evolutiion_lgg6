@@ -75,10 +75,10 @@ echo "USER=$BUILD_USERNAME HOST=$BUILD_HOSTNAME"
 
 sed -i 's/^SCO_WBS_SAMPLE_RATE = 0$/SCO_WBS_SAMPLE_RATE = 1/' device/lge/msm8996-common/bluetooth/vnd_lge_msm8996.txt
 
-grep -q "BUILD_BROKEN_NINJA_USES_ENV_VAR" device/lge/msm8996-common/BoardConfigCommon.mk || \
+grep -q "BUILD_BROKEN_NINJA_USES_ENV_VARS" device/lge/msm8996-common/BoardConfigCommon.mk || \
 cat >> device/lge/msm8996-common/BoardConfigCommon.mk << 'EOF'
 
-BUILD_BROKEN_NINJA_USES_ENV_VAR := KBUILD_BUILD_USER KBUILD_BUILD_HOST BUILD_USERNAME BUILD_HOSTNAME
+BUILD_BROKEN_NINJA_USES_ENV_VARS := KBUILD_BUILD_USER KBUILD_BUILD_HOST BUILD_USERNAME BUILD_HOSTNAME
 EOF
 
 cat device/lge/msm8996-common/BoardConfigCommon.mk
