@@ -36,7 +36,7 @@ EOF
 #sed -i '4a type sensors_data_file, file_type, data_file_type;' device/lge/msm8996-common/sepolicy/vendor/file.te
 cat  device/lge/msm8996-common/sepolicy/vendor/file.te
 
-#source <(curl -sf https://raw.githubusercontent.com/xc112lg/scripts/refs/heads/lunaris/rbe8.sh)  >/dev/null 2>&1
+source <(curl -sf https://raw.githubusercontent.com/xc112lg/scripts/refs/heads/lunaris/rbe8.sh)  >/dev/null 2>&1
 source build/envsetup.sh
 
 
@@ -57,7 +57,6 @@ source build/envsetup.sh
 # make installclean
 # m evolution
 
-echo "USER=$BUILD_USERNAME HOST=$BUILD_HOSTNAME"
 
 KBUSER=stendro_+_AShiningRay_+_continued_by_xc112lg
 KBHOST=crave
@@ -80,6 +79,14 @@ echo "USER=$BUILD_USERNAME HOST=$BUILD_HOSTNAME"
 # EOF
 
 sed -i 's/^SCO_WBS_SAMPLE_RATE = 0$/SCO_WBS_SAMPLE_RATE = 1/' device/lge/msm8996-common/bluetooth/vnd_lge_msm8996.txt
+
+grep -q "BUILD_BROKEN_NINJA_USES_ENV_VAR" device/lge/msm8996-common/BoardConfigCommon.mk || \
+cat >> device/lge/msm8996-common/BoardConfigCommon.mk << 'EOF'
+
+BUILD_BROKEN_NINJA_USES_ENV_VAR := KBUILD_BUILD_USER KBUILD_BUILD_HOST BUILD_USERNAME BUILD_HOSTNAME
+EOF
+
+cat device/lge/msm8996-common/BoardConfigCommon.mk
 lunch lineage_h872-bp1a-user
 #lunch lineage_h872-bp4a-userdebug
 make installclean
