@@ -92,7 +92,7 @@ if ! grep -q "stendro_+_AShiningRay_+_continued_by_xc112lg" "$KERNEL_DIR/scripts
     -e '/if test -z "\$KBUILD_BUILD_USER"; then/,/^fi$/c\
 LINUX_COMPILE_BY="stendro_+_AShiningRay_+_continued_by_xc112lg"' \
     -e '/if test -z "\$KBUILD_BUILD_HOST"; then/,/^fi$/c\
-LINUX_COMPILE_HOST="crave"' \
+LINUX_COMPILE_HOST="crave.io"' \
     "$KERNEL_DIR/scripts/mkcompile_h"
 fi
 
