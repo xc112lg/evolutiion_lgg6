@@ -15,26 +15,11 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor-user
 endif
 EOF
 
-export BUILD_USERNAME=stendro_+_AShiningRay_+_continued_by_xc112lg
-export BUILD_HOSTNAME=crave.io
-
-export KBUILD_BUILD_USER=stendro_+_AShiningRay_+_continued_by_xc112lg
-export KBUILD_BUILD_HOST=crave.io
-
-
-lunch lineage_h872-bp1a-user
-#lunch lineage_h872-bp4a-userdebug
-make installclean
-m evolution
-
-
 lunch lineage_h870-bp1a-user
-
 make installclean
 m evolution
 
 lunch lineage_us997-bp1a-user
-
 make installclean
 m evolution
 
