@@ -1,3 +1,8 @@
+############################
+#Precompiled Build wont take much time
+###########################
+
+
 export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
 
