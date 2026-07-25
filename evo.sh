@@ -96,11 +96,6 @@ LINUX_COMPILE_HOST="crave"' \
     "$KERNEL_DIR/scripts/mkcompile_h"
 fi
 
-cat kernel/lge/msm8996/scripts/mkcompile_h
-
-
-
-
 lunch lineage_h872-bp1a-user
 #lunch lineage_h872-bp4a-userdebug
 make installclean
