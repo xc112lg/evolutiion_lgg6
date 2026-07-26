@@ -34,9 +34,9 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor-user
 endif
 EOF
 
-sed -i '$a TARGET_ENABLE_BLUR := true' device/lge/msm8996-common/BoardConfigCommon.mk
-sed -i '$a TARGET_INCLUDE_VIPERFX := true' device/lge/msm8996-common/BoardConfigCommon.mk
-sed -i '$a BUILD_BCR := false' device/lge/msm8996-common/BoardConfigCommon.mk
+# sed -i '$a TARGET_ENABLE_BLUR := true' device/lge/msm8996-common/BoardConfigCommon.mk
+# sed -i '$a TARGET_INCLUDE_VIPERFX := true' device/lge/msm8996-common/BoardConfigCommon.mk
+# sed -i '$a BUILD_BCR := false' device/lge/msm8996-common/BoardConfigCommon.mk
 
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/scripts/refs/heads/lunaris/rbe8.sh)  >/dev/null 2>&1
 source build/envsetup.sh
@@ -108,7 +108,9 @@ sed -i \
   -e '/<path name="headphones-hifi-dacdop-advanced">/a\        <ctl name="Es9218 Bypass" value="0" />' \
   -e '/<path name="headphones-hifi-dacdop-aux">/a\        <ctl name="Es9218 Bypass" value="0" />' \
   device/lge/g6-common/audio/mixer_paths_tasha.xml
-
+export BUILD_BCR=false
+export TARGET_INCLUDE_VIPERFX=true
+export TARGET_ENABLE_BLUR=true
 lunch lineage_h872-bp1a-user
 #lunch lineage_h872-bp4a-userdebug
 make installclean
