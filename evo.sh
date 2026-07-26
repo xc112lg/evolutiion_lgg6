@@ -88,7 +88,8 @@ source build/envsetup.sh
 # \
 # # ViPER4Android\
 # allow hal_audio_default hal_audio_default:process { execmem };' device/lge/msm8996-common/sepolicy/vendor/hal_audio_default.te
-
+sed -i '/ro.hardware.egl=adreno \\/a\    ro.surface_flinger.supports_background_blur=1 \\' device/lge/msm8996-common/vendor_prop.mk
+cat device/lge/msm8996-common/vendor_prop.mk
 KERNEL_DIR="kernel/lge/msm8996"
 if ! grep -q "stendro_+_AShiningRay_+_continued_by_xc112lg" "$KERNEL_DIR/scripts/mkcompile_h"; then
   sed -i \
