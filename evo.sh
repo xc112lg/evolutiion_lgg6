@@ -34,6 +34,8 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor-user
 endif
 EOF
 
+sed -i '$a TARGET_ENABLE_BLUR := true' device/lge/msm8996-common/BoardConfigCommon.mk
+
 
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/scripts/refs/heads/lunaris/rbe8.sh)  >/dev/null 2>&1
 source build/envsetup.sh
