@@ -116,7 +116,7 @@ export TARGET_ENABLE_BLUR=true
 sed -i '/<\/resources>/i\
 \    <!-- Blur radius behind Notification Shade -->\n    <dimen name="max_shade_window_blur_radius">17dp</dimen>\n' "device/lge/msm8996-common/overlay/frameworks/base/packages/SystemUI/res/values/config.xml"
 
-cat device/lge/msm8996-common/overlay/frameworks/base/packages/SystemUI/res/values/config.xml
+
 # Directory structure
 mkdir -p device/lge/msm8996-common/rro_overlays/LauncherOverlayMsm8996/res/values
 
@@ -171,12 +171,12 @@ sed -i '/^    WifiOverlay \\$/a\    LauncherOverlayMsm8996 \\' device/lge/msm899
 
 
 
+sed -i 's/mMaxBlurRadius = 0;/mMaxBlurRadius = activity.getResources().getDimensionPixelSize(R.dimen.max_depth_blur_radius_enhanced);/' packages/apps/Launcher3/quickstep/src/com/android/quickstep/util/BaseDepthController.java
 
 
 
 
-
-
+cat packages/apps/Launcher3/quickstep/src/com/android/quickstep/util/BaseDepthController.java
 
 
 
