@@ -36,6 +36,19 @@ EOF
 
 
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/scripts/refs/heads/lunaris/rbe8.sh)  >/dev/null 2>&1
+
+ mkdir -p overlay/frameworks/base/core/res/res/values
+    curl -sf -o overlay/frameworks/base/core/res/res/values/cr_config.xml \
+        https://raw.githubusercontent.com/crdroidandroid/android_frameworks_base/15.0/core/res/res/values/cr_config.xml
+
+    mkdir -p overlay/frameworks/base/packages/SystemUI/res/values
+    curl -sf -o overlay/frameworks/base/packages/SystemUI/res/values/cr_config.xml \
+        https://raw.githubusercontent.com/crdroidandroid/android_frameworks_base/15.0/packages/SystemUI/res/values/cr_config.xml
+    sed -i 's|"maintainer": "\${MAINTAINER:-}"|"maintainer": "xc112lg"|' vendor/lineage/build/tools/createjson.sh
+    sed -i 's|https://raw\.githubusercontent\.com/crdroidandroid|https://raw.githubusercontent.com/xc112lg|g' packages/apps/Settings/src/com/android/settings/deviceinfo/firmwareversion/BuildMaintainerPreference.kt
+
+
+
 source build/envsetup.sh
 
 
