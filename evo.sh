@@ -171,11 +171,6 @@ sed -i '/^    WifiOverlay \\$/a\    LauncherOverlayMsm8996 \\' device/lge/msm899
 
 
 
-sed -i 's/mMaxBlurRadius = 0;/mMaxBlurRadius = activity.getResources().getDimensionPixelSize(R.dimen.max_depth_blur_radius_enhanced);/' packages/apps/Launcher3/quickstep/src/com/android/quickstep/util/BaseDepthController.java
-
-
-
-
 cat packages/apps/Launcher3/quickstep/src/com/android/quickstep/util/BaseDepthController.java
 
 
