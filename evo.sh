@@ -186,10 +186,13 @@ export TARGET_ENABLE_BLUR=true
 
 
 
-lunch lineage_h872-bp1a-user
+#lunch lineage_h872-bp1a-user
 #lunch lineage_h872-bp4a-userdebug
+breakfast h872
 make installclean
-m bacon
+
+brunch h872
+#m bacon
 
 
 
