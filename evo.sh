@@ -186,13 +186,13 @@ sed -i '/^    WifiOverlay \\$/a\    LauncherOverlayMsm8996 \\' device/lge/msm899
 
 
 
-#lunch lineage_h872-bp1a-user
+lunch lineage_h872-bp1a-eng
 #lunch lineage_h872-bp4a-userdebug
-breakfast h872
+# breakfast h872
 make installclean
 
-brunch h872
-#m bacon
+# brunch h872
+m bacon
 
 
 
