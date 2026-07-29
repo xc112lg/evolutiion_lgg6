@@ -122,7 +122,7 @@ sed -i \
 export BUILD_BCR=false
 #export TARGET_INCLUDE_VIPERFX=true
 export TARGET_ENABLE_BLUR=true
-
+export WITH_ADB_INSECURE=true
 
 
 
@@ -186,7 +186,6 @@ sed -i '/^# Art$/i\
 # ADB\
 PRODUCT_PROPERTY_OVERRIDES += \\\
     persist.sys.usb.config=mtp,adb \\\
-    ro.adb.secure=0 \\\
     persist.adb.tcp.port=5555\
 ' device/lge/msm8996-common/vendor_prop.mk
 
