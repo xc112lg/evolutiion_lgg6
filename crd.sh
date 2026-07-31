@@ -21,7 +21,7 @@ repo sync -c -j64 --force-sync --no-clone-bundle --no-tags
 # export SELINUX_IGNORE_NEVERALLOWS=true
 export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
-sed -i '$a -include vendor/evolution-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
+sed -i '$a -include vendor/lineage-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
 
 mkdir -p device/lge/msm8996-common/sepolicy/vendor-user
 if [ ! -f device/lge/msm8996-common/sepolicy/vendor-user/file.te ]; then
