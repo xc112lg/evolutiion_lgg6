@@ -122,7 +122,6 @@ sed -i \
 export BUILD_BCR=false
 #export TARGET_INCLUDE_VIPERFX=true
 export TARGET_ENABLE_BLUR=true
-export WITH_ADB_INSECURE=true
 
 
 
@@ -188,9 +187,6 @@ PRODUCT_PROPERTY_OVERRIDES += \\\
     persist.sys.usb.config=mtp,adb \\\
     persist.adb.tcp.port=5555\
 ' device/lge/msm8996-common/vendor_prop.mk
-
-grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py || sed -i '353s/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
-grep -n -A2 -B2 'ro.adb.secure' build/soong/scripts/gen_build_prop.py
 
 lunch lineage_h872-bp1a-userdebug
 #lunch lineage_h872-bp4a-userdebug
