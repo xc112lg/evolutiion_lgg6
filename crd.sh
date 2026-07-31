@@ -224,7 +224,6 @@ PRODUCT_PROPERTY_OVERRIDES += \\\
 
 grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py || sed -i '353s/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
 grep -n -A2 -B2 'ro.adb.secure' build/soong/scripts/gen_build_prop.py
-perl -0777 -pi -e 's/^cc_prebuilt_library_shared \{\n\tname: "libwifi-hal-ctrl",.*?\n\}\n\n?//ms' vendor/lge/msm8996-common/Android.bp
 lunch lineage_h872-bp1a-userdebug
 #lunch lineage_h872-bp4a-userdebug
 # breakfast h872
