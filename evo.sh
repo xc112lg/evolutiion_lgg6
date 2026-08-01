@@ -181,13 +181,6 @@ EOF
 # Register in msm8996.mk
 sed -i '/^    WifiOverlay \\$/a\    LauncherOverlayMsm8996 \\' device/lge/msm8996-common/msm8996.mk
 
-sed -i '/^# Art$/i\
-# ADB\
-PRODUCT_PROPERTY_OVERRIDES += \\\
-    persist.sys.usb.config=mtp,adb \\\
-    persist.adb.tcp.port=5555\
-' device/lge/msm8996-common/vendor_prop.mk
-
 lunch lineage_h872-bp1a-userdebug
 #lunch lineage_h872-bp4a-userdebug
 # breakfast h872
