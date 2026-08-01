@@ -21,6 +21,7 @@ repo sync -c -j64 --force-sync --no-clone-bundle --no-tags
 # export SELINUX_IGNORE_NEVERALLOWS=true
 export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
+
 sed -i '$a -include vendor/evolution-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
 
 source build/envsetup.sh
@@ -46,7 +47,7 @@ sed -i \
 export BUILD_BCR=false
 #export TARGET_INCLUDE_VIPERFX=true
 export TARGET_ENABLE_BLUR=true
-
+export WITH_ADB_INSECURE=true
 sed -i '/<\/resources>/i\
 \    <!-- Blur radius behind Notification Shade -->\n    <dimen name="max_shade_window_blur_radius">17dp</dimen>\n' "device/lge/msm8996-common/overlay/frameworks/base/packages/SystemUI/res/values/config.xml"
 
