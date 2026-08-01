@@ -101,14 +101,6 @@ grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/
 grep -n -A2 -B2 'ro.adb.secure' build/soong/scripts/gen_build_prop.py
 
 
-cat >> device/lge/msm8996-common/sepolicy/vendor/file_contexts << 'EOF'
-
-# SELinux
-# Fix: installd was denied read access to odm_seapp_contexts, causing the
-# whole seapp_contexts database to fail to load and every priv-app to abort.
-/(odm|vendor/odm)/etc/selinux/odm_seapp_contexts                    u:object_r:seapp_contexts_file:s0
-EOF
-cat device/lge/msm8996-common/sepolicy/vendor/file_contexts
 lunch lineage_h872-bp1a-userdebug
 #lunch lineage_h872-bp4a-userdebug
 # breakfast h872
