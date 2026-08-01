@@ -5,7 +5,7 @@ sed -i '/^# ADB$/,/^persist\.adb\.tcp\.port=5555$/d' device/lge/msm8996-common/v
 cat device/lge/msm8996-common/vendor_prop.mk
 export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
-
+unset WITH_ADB_INSECURE
 #source <(curl -sf https://raw.githubusercontent.com/xc112lg/scripts/refs/heads/lunaris/rbe8.sh)  >/dev/null 2>&1
 source build/envsetup.sh
 
