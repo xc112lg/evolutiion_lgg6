@@ -54,6 +54,8 @@ grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/
 sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
 grep -n -A2 -B2 'ro.adb.secure' build/soong/scripts/gen_build_prop.py
 
+curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/init.qcom.usb.rc.patch | patch -d device/lge/msm8996-common -p0
+
 lunch lineage_h872-bp1a-userdebug
 #lunch lineage_h872-bp4a-userdebug
 # breakfast h872
