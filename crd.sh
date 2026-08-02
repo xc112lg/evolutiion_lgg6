@@ -116,7 +116,6 @@ sed -i '$r /dev/stdin' device/lge/msm8996-common/sepolicy/vendor/file_contexts <
 /system/vendor/odm/etc/selinux/odm_sepolicy\.cil                 u:object_r:sepolicy_file:s0
 EOF
 
-cat device/lge/msm8996-common/sepolicy/vendor/file_contexts
 
 lunch lineage_h872-bp1a-userdebug
 #lunch lineage_h872-bp4a-userdebug
