@@ -37,6 +37,6 @@ m evolution
 #make installclean
 #make clean # one time
 #m bacon
-#m evolution
+#m evolutionss
 
 curl -sf https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/upevo.sh  | bash >/dev/null 2>&1
