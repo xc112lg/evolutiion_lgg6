@@ -6,7 +6,8 @@
 rm -rf .repo/local_manifests/
 rm -rf device/lge
 rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
-rm -rf vendor/evolution-priv/keys
+rm -rf vendor/evolution-priv/keys 
+
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
@@ -15,6 +16,7 @@ repo init -u https://github.com/crdroidandroid/android.git -b 15.0 --git-lfs --d
 git clone https://github.com/xc112lg/local_manifests --depth 1 -b lgcrd .repo/local_manifests
 repo sync -c -j64 --force-sync --no-clone-bundle --no-tags
 /opt/crave/resync.sh
+rm -rf vendor/lineage-priv/keys
 # export TARGET_USES_PICO_GAPPS=true
 # export TARGET_ENABLE_BLUR=false
 # export WITH_ADB_INSECURE=true
