@@ -103,6 +103,11 @@ EOF
 
 # Register in msm8996.mk
 sed -i '/^    WifiOverlay \\$/a\    LauncherOverlayMsm8996 \\' device/lge/msm8996-common/msm8996.mk
+
+grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py ||
+sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
+grep -n -A2 -B2 'ro.adb.secure' build/soong/scripts/gen_build_prop.py
+
 lunch lineage_h872-bp1a-userdebug
 #lunch lineage_h872-bp4a-userdebug
 # breakfast h872
