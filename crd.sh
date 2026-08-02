@@ -50,7 +50,8 @@ export BUILD_BCR=false
 export TARGET_ENABLE_BLUR=true
 export WITH_ADB_INSECURE=true
 
-grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py || sed -i '353s/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
+grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py ||
+sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
 grep -n -A2 -B2 'ro.adb.secure' build/soong/scripts/gen_build_prop.py
 
 lunch lineage_h872-bp1a-userdebug
