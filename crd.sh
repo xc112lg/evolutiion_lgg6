@@ -82,10 +82,6 @@ printf '%s\n' \
   'allow vold_prepare_subdirs vendor_file:file read;' \
   >> device/lge/msm8996-common/sepolicy/private/vold_prepare_subdirs.te
 
-# recheck
-echo "== priv_app.te =="; cat device/lge/msm8996-common/sepolicy/private/priv_app.te
-echo "== untrusted_app.te =="; cat device/lge/msm8996-common/sepolicy/private/untrusted_app.te
-echo "== vold_prepare_subdirs.te =="; cat device/lge/msm8996-common/sepolicy/private/vold_prepare_subdirs.te
 
 sed -i '/^# Art$/i\
 # ADB\
@@ -119,7 +115,7 @@ sed -i '$r /dev/stdin' device/lge/msm8996-common/sepolicy/vendor/file_contexts <
 /system/vendor/odm/etc/selinux/odm_sepolicy\.cil                 u:object_r:sepolicy_file:s0
 EOF
 
-
+cat device/lge/msm8996-common/sepolicy/vendor/file_contexts
 
 lunch lineage_h872-bp1a-userdebug
 #lunch lineage_h872-bp4a-userdebug
