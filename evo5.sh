@@ -4,7 +4,8 @@
 sed -i '/^# ADB$/,/^persist\.adb\.tcp\.port=5555$/d' device/lge/msm8996-common/vendor_prop.mk
 cat device/lge/msm8996-common/vendor_prop.mk
 
-grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py || sed -i '353s/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
+grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py ||
+sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
 grep -n -A2 -B2 'ro.adb.secure' build/soong/scripts/gen_build_prop.py
 export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
