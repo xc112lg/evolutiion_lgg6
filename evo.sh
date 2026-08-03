@@ -7,6 +7,7 @@ rm -rf .repo/local_manifests/
 rm -rf device/lge
 rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
 rm -rf vendor/evolution-priv/keys
+rm -rf build/soong
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
@@ -33,9 +34,7 @@ source build/envsetup.sh
 
 
 
-grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py ||
-sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
-grep -n -A2 -B2 'ro.adb.secure' build/soong/scripts/gen_build_prop.py
+
 
 lunch lineage_h872-bp1a-userdebug
 #lunch lineage_h872-bp4a-userdebug
