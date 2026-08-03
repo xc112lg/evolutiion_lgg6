@@ -53,6 +53,34 @@ export WITH_ADB_INSECURE=true
 grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py ||
 sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
 
+mkdir -p device/lge/msm8996-common/sepolicy/private
+
+# priv_app.te
+[ -f device/lge/msm8996-common/sepolicy/private/priv_app.te ] || : > device/lge/msm8996-common/sepolicy/private/priv_app.te
+printf '%s\n' \
+  'allow priv_app mnt_pass_through_file:dir getattr;' \
+  'allow priv_app mnt_pass_through_file:dir search;' \
+  'allow priv_app qemu_hw_prop:file read;' \
+  'allow priv_app keyguard_config_prop:file read;' \
+  'allow priv_app storage_config_prop:file read;' \
+  'allow priv_app vendor_file:file read;' \
+  'allow priv_app vr_manager_service:service_manager find;' \
+  'allow priv_app ota_package_file:dir { read getattr };' \
+  >> device/lge/msm8996-common/sepolicy/private/priv_app.te
+
+# untrusted_app.te
+[ -f device/lge/msm8996-common/sepolicy/private/untrusted_app.te ] || : > device/lge/msm8996-common/sepolicy/private/untrusted_app.te
+printf '%s\n' \
+  'allow untrusted_app_32 vendor_file:file read;' \
+  'allow untrusted_app vendor_file:file read;' \
+  >> device/lge/msm8996-common/sepolicy/private/untrusted_app.te
+
+# vold_prepare_subdirs.te
+[ -f device/lge/msm8996-common/sepolicy/private/vold_prepare_subdirs.te ] || : > device/lge/msm8996-common/sepolicy/private/vold_prepare_subdirs.te
+printf '%s\n' \
+  'allow vold_prepare_subdirs vendor_file:file read;' \
+  >> device/lge/msm8996-common/sepolicy/private/vold_prepare_subdirs.te
+
 
 sed -i 's/^BOARD_SEPOLICY_DIRS += \$(DEVICE_COMMON_PATH)\/sepolicy$/BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_COMMON_PATH)\/sepolicy/' device/lge/g6-common/BoardConfigCommon.mk
 
@@ -79,6 +107,7 @@ sed -i '$r /dev/stdin' device/lge/msm8996-common/sepolicy/vendor/file_contexts <
 /system/vendor/odm/etc/selinux/odm_sepolicy\.cil                 u:object_r:sepolicy_file:s0
 EOF
 
+cat device/lge/msm8996-common/sepolicy/vendor/file_contexts
 
 
 

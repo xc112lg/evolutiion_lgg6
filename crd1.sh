@@ -82,14 +82,7 @@ printf '%s\n' \
   >> device/lge/msm8996-common/sepolicy/private/vold_prepare_subdirs.te
 
 
-sed -i '/^# Art$/i\
-# ADB\
-PRODUCT_PROPERTY_OVERRIDES += \\\
-    persist.sys.usb.config=mtp,adb \\\
-    persist.adb.tcp.port=5555\
-' device/lge/msm8996-common/vendor_prop.mk
-
-sed -i 's/^BOARD_SEPOLICY_DIRS += \$(DEVICE_COMMON_PATH)\/sepolicy$/BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_COMMON_PATH)\/sepolicy/' device/lge/g6-common/BoardConfigCommon.mk
+#sed -i 's/^BOARD_SEPOLICY_DIRS += \$(DEVICE_COMMON_PATH)\/sepolicy$/BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_COMMON_PATH)\/sepolicy/' device/lge/g6-common/BoardConfigCommon.mk
 
 
 grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py || sed -i '353s/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
