@@ -1,15 +1,15 @@
 ############################
 #Precompiled Build wont take much time
 ###########################
-sed -i '/^# ADB$/,/^persist\.adb\.tcp\.port=5555$/d' device/lge/msm8996-common/vendor_prop.mk
-cat device/lge/msm8996-common/vendor_prop.mk
-
+export WITH_GMS=false
+export TARGET_USES_PICO_GAPPS=true
+export BUILD_BCR=false
+export TARGET_ENABLE_BLUR=true
+export WITH_ADB_INSECURE=true
 grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py ||
 sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
 grep -n -A2 -B2 'ro.adb.secure' build/soong/scripts/gen_build_prop.py
-export WITH_GMS=false
-export TARGET_USES_PICO_GAPPS=true
-export WITH_ADB_INSECURE=true
+
 #source <(curl -sf https://raw.githubusercontent.com/xc112lg/scripts/refs/heads/lunaris/rbe8.sh)  >/dev/null 2>&1
 source build/envsetup.sh
 
