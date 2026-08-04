@@ -6,9 +6,9 @@ export TARGET_ENABLE_BLUR=true
 #export WITH_ADB_INSECURE=true
 
 
-source <(curl -sf https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/blur.sh)  >/dev/null 2>&1
+#source <(curl -sf https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/blur.sh)  >/dev/null 2>&1
 
-sed -i '$a -include vendor/evolution-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
+#sed -i '$a -include vendor/evolution-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
 
 source build/envsetup.sh
 
