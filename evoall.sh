@@ -17,13 +17,7 @@ curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/ma
 
 
 
-lunch lineage_h872-bp1a-userdebug
-#lunch lineage_h872-bp4a-userdebug
-# breakfast h872
-make installclean
 
-# brunch h872
-m evolution
 
 
 lunch lineage_h872-bp1a-user
