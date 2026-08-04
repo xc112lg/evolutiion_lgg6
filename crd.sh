@@ -18,8 +18,6 @@ repo sync -c -j64 --force-sync --no-clone-bundle --no-tags
 export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
 sed -i '$a -include vendor/lineage-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
-
-
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/rbe8.sh)  >/dev/null 2>&1
 
  mkdir -p device/lge/msm8996-common/overlay/frameworks/base/core/res/res/values

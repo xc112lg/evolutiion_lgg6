@@ -34,7 +34,8 @@ source build/envsetup.sh
 
 
 
-
+export WITH_GMS=false
+export TARGET_USES_PICO_GAPPS=true
 export BUILD_BCR=false
 #export TARGET_INCLUDE_VIPERFX=true
 export TARGET_ENABLE_BLUR=true
