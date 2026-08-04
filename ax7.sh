@@ -22,8 +22,8 @@ else
     echo "[PATCH] Already applied (or conflicts), skipping."
 fi
 
-export RBE_service="xc2.buildbuddy.io:443"        # BuildBuddy instance address (without grpcs://, add the port 443)
-export RBE_remote_headers="x-buildbuddy-api-key=y5iqIkFp4iRpu1p6XaqX"    # Your BuildBuddy API key
+export RBE_service="xc3.buildbuddy.io:443"        # BuildBuddy instance address (without grpcs://, add the port 443)
+export RBE_remote_headers="x-buildbuddy-api-key=011SbTPNvXvcj5eqEwge"    # Your BuildBuddy API key
 export RBE_use_rpc_credentials=false
 export RBE_service_no_auth=true
 
