@@ -54,8 +54,8 @@ export TARGET_ENABLE_BLUR=true
 #sed -i 's/^BOARD_SEPOLICY_DIRS += \$(DEVICE_COMMON_PATH)\/sepolicy$/BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_COMMON_PATH)\/sepolicy/' device/lge/g6-common/BoardConfigCommon.mk
 
 
-# grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py || sed -i '353s/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
-# grep -n -A2 -B2 'ro.adb.secure' build/soong/scripts/gen_build_prop.py
+grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py || sed -i '353s/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
+grep -n -A2 -B2 'ro.adb.secure' build/soong/scripts/gen_build_prop.py
 
 sed -i '$r /dev/stdin' device/lge/msm8996-common/sepolicy/vendor/file_contexts <<'EOF'
 
@@ -78,11 +78,21 @@ EOF
 
 cat device/lge/msm8996-common/sepolicy/vendor/file_contexts
 
+mkdir -p device/lge/msm8996-common/sepolicy/vendor-user
+if [ ! -f device/lge/msm8996-common/sepolicy/vendor-user/file.te ]; then
+    echo 'type sensors_data_file, file_type, data_file_type;' > device/lge/msm8996-common/sepolicy/vendor-user/file.te
+fi
+grep -q "sepolicy/vendor-user" device/lge/msm8996-common/BoardConfigCommon.mk || cat >> device/lge/msm8996-common/BoardConfigCommon.mk << 'EOF'
+
+ifeq ($(TARGET_BUILD_VARIANT),user)
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor-user
+endif
+EOF
 
 
 #curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/init.qcom.usb.rc.patch | patch -d device/lge/msm8996-common -p0
 
-lunch lineage_h872-bp1a-userdebug
+lunch lineage_h872-bp1a-user
 
 make installclean
 
