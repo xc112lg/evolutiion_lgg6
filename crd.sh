@@ -80,7 +80,7 @@ cat device/lge/msm8996-common/sepolicy/vendor/file_contexts
 
 
 
-curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/init.qcom.usb.rc.patch | patch -d device/lge/msm8996-common -p0
+#curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/init.qcom.usb.rc.patch | patch -d device/lge/msm8996-common -p0
 
 lunch lineage_h872-bp1a-userdebug
 
