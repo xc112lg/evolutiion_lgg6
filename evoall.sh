@@ -20,24 +20,24 @@ curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/ma
 
 
 
-lunch lineage_h872-bp1a-user
+lunch lineage_h872-bp1a-userdebug
 make installclean
 m evolution
 
-lunch lineage_h870-bp1a-user
+lunch lineage_h870-bp1a-userdebug
 make installclean
 m evolution
 
-lunch lineage_us997-bp1a-user
+lunch lineage_us997-bp1a-userdebug
 make installclean
 m evolution
 
-lunch lineage_h873-bp1a-user
+lunch lineage_h873-bp1a-userdebug
 #lunch lineage_h872-bp4a-userdebug
 make installclean
 m evolution
 
-lunch lineage_h870d-bp1a-user
+lunch lineage_h870d-bp1a-userdebug
 
 make installclean
 m evolution
