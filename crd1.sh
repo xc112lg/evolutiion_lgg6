@@ -1,12 +1,12 @@
 rm -rf .repo/local_manifests/
 rm -rf device/lge
 rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
-rm -rf vendor/evolution-priv/keys vendor/lineage-priv/keys
+rm -rf vendor/bacon-priv/keys vendor/lineage-priv/keys
 #rm -rf build/soong
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
-#repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs --depth=1
+#repo init -u https://github.com/bacon-X/manifest -b bka --git-lfs --depth=1
 repo init -u https://github.com/crdroidandroid/android.git -b 15.0 --git-lfs --depth=1
 git clone https://github.com/xc112lg/local_manifests --depth 1 -b lgcrd .repo/local_manifests
 repo sync -c -j64 --force-sync --no-clone-bundle --no-tags
@@ -60,6 +60,26 @@ make installclean
 
 
 m bacon
+
+
+lunch lineage_h870-bp1a-user
+make installclean
+m bacon
+
+lunch lineage_us997-bp1a-user
+make installclean
+m bacon
+
+lunch lineage_h873-bp1a-user
+#lunch lineage_h872-bp4a-userdebug
+make installclean
+m bacon
+
+lunch lineage_h870d-bp1a-user
+
+make installclean
+m bacon
+
 
 
 #curl -sf https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/upevo.sh  | bash >/dev/null 2>&1
