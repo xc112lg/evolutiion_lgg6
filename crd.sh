@@ -71,7 +71,7 @@ sed -i '$r /dev/stdin' device/lge/msm8996-common/sepolicy/vendor/file_contexts <
 # /system/vendor/odm/etc/selinux/odm_hwservice_contexts            u:object_r:hwservice_contexts_file:s0
 # /system/vendor/odm/etc/selinux/odm_mac_permissions\.xml          u:object_r:mac_perms_file:s0
 # /system/vendor/odm/etc/selinux/odm_sepolicy\.cil                 u:object_r:sepolicy_file:s0
-EOF
+# EOF
 
 cat device/lge/msm8996-common/sepolicy/vendor/file_contexts
 
@@ -81,7 +81,9 @@ if [ ! -f device/lge/msm8996-common/sepolicy/vendor-user/file.te ]; then
 fi
 grep -q "sepolicy/vendor-user" device/lge/msm8996-common/BoardConfigCommon.mk || cat >> device/lge/msm8996-common/BoardConfigCommon.mk << 'EOF'
 
+ifeq ($(TARGET_BUILD_VARIANT),user)
 BOARD_VENDOR_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy/vendor-user $(BOARD_VENDOR_SEPOLICY_DIRS)
+endif
 EOF
 
 
