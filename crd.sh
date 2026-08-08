@@ -73,7 +73,7 @@ sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("
 # /system/vendor/odm/etc/selinux/odm_sepolicy\.cil                 u:object_r:sepolicy_file:s0
 #EOF
 
-cat device/lge/msm8996-common/sepolicy/vendor/file_contexts
+#cat device/lge/msm8996-common/sepolicy/vendor/file_contexts
 
 mkdir -p device/lge/msm8996-common/sepolicy/vendor-user
 if [ ! -f device/lge/msm8996-common/sepolicy/vendor-user/file.te ]; then
@@ -83,7 +83,8 @@ grep -q "sepolicy/vendor-user" device/lge/msm8996-common/BoardConfigCommon.mk ||
 
 BOARD_VENDOR_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy/vendor-user $(BOARD_VENDOR_SEPOLICY_DIRS)
 EOF
-
+cat device/lge/msm8996-common/sepolicy/vendor-user/file.te
+cat device/lge/msm8996-common/BoardConfigCommon.mk
 
 #curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/init.qcom.usb.rc.patch | patch -d device/lge/msm8996-common -p0
 
