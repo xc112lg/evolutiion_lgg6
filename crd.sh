@@ -54,27 +54,6 @@ grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/
 sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
 
 
-#sed -i '$r /dev/stdin' device/lge/msm8996-common/sepolicy/vendor/file_contexts <<'EOF'
-
-# # ODM sepolicy fragments
-# # AOSP's private/file_contexts only matches /(odm|vendor/odm)/etc/selinux/...
-# # On this device there is no separate /vendor partition (merged into
-# # /system/vendor), so the real runtime path is /system/vendor/odm/etc/selinux/...
-# # which falls outside that pattern and was falling back to the generic
-# # vendor_file label, causing zygote/installd/system_server (and adb shell)
-# # to be denied getattr/read on these files. Types below match AOSP's own
-# # per-file types (see system/sepolicy private/file_contexts) exactly.
-# /system/vendor/odm/etc/selinux/odm_file_contexts                 u:object_r:file_contexts_file:s0
-# /system/vendor/odm/etc/selinux/odm_seapp_contexts                u:object_r:seapp_contexts_file:s0
-# /system/vendor/odm/etc/selinux/odm_property_contexts             u:object_r:property_contexts_file:s0
-# /system/vendor/odm/etc/selinux/odm_service_contexts              u:object_r:vendor_service_contexts_file:s0
-# /system/vendor/odm/etc/selinux/odm_hwservice_contexts            u:object_r:hwservice_contexts_file:s0
-# /system/vendor/odm/etc/selinux/odm_mac_permissions\.xml          u:object_r:mac_perms_file:s0
-# /system/vendor/odm/etc/selinux/odm_sepolicy\.cil                 u:object_r:sepolicy_file:s0
-#EOF
-
-#cat device/lge/msm8996-common/sepolicy/vendor/file_contexts
-
 mkdir -p device/lge/msm8996-common/sepolicy/vendor-user
 if [ ! -f device/lge/msm8996-common/sepolicy/vendor-user/file.te ]; then
     echo 'type sensors_data_file, file_type, data_file_type;' > device/lge/msm8996-common/sepolicy/vendor-user/file.te
@@ -83,8 +62,9 @@ grep -q "sepolicy/vendor-user" device/lge/msm8996-common/BoardConfigCommon.mk ||
 
 BOARD_VENDOR_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy/vendor-user $(BOARD_VENDOR_SEPOLICY_DIRS)
 EOF
-cat device/lge/msm8996-common/sepolicy/vendor-user/file.te
-cat device/lge/msm8996-common/BoardConfigCommon.mk
+
+
+[ "$(sha1sum device/lge/g6-common/biometrics/BiometricsFingerprint.cpp 2>/dev/null | cut -d' ' -f1)" = "1674473ef7f7e3f079160dd802bedb7533c2974b" ] && echo "already patched, skipping" || curl -sL https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/BiometricsFingerprint.cpp -o device/lge/g6-common/biometrics/BiometricsFingerprint.cpp
 
 #curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/init.qcom.usb.rc.patch | patch -d device/lge/msm8996-common -p0
 
