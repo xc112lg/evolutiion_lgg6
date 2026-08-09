@@ -2,7 +2,6 @@ rm -rf .repo/local_manifests/
 rm -rf device/lge
 rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
 rm -rf vendor/evolution-priv/keys vendor/lineage-priv/keys
-rm -rf build/soong
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
@@ -64,8 +63,7 @@ BOARD_VENDOR_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy/vendor-user $(BOARD_VENDOR
 EOF
 
 
-[ "$(sha1sum device/lge/g6-common/biometrics/BiometricsFingerprint.cpp 2>/dev/null | cut -d' ' -f1)" = "1674473ef7f7e3f079160dd802bedb7533c2974b" ] && echo "already patched, skipping" || curl -sL https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/BiometricsFingerprint.cpp -o device/lge/g6-common/biometrics/BiometricsFingerprint.cpp
-
+curl -sL https://github.com/xc112lg/android_device_lge_g6-common/commit/89433a836be4dbc067d75ab631604039718322c3.patch | git -C device/lge/g6-common am
 #curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/init.qcom.usb.rc.patch | patch -d device/lge/msm8996-common -p0
 
 lunch lineage_h872-bp1a-user
