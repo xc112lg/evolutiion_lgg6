@@ -17,7 +17,7 @@ repo sync -c -j64 --force-sync --no-clone-bundle --no-tags
 export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
 sed -i '$a -include vendor/lineage-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
-
+curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/init.qcom.usb.rc.patch | patch -d device/lge/msm8996-common -p0
  mkdir -p device/lge/msm8996-common/overlay/frameworks/base/core/res/res/values
     curl -sf -o device/lge/msm8996-common/overlay/frameworks/base/core/res/res/values/cr_config.xml \
         https://raw.githubusercontent.com/crdroidandroid/android_frameworks_base/15.0/core/res/res/values/cr_config.xml
@@ -42,7 +42,7 @@ fi
 
 export BUILD_BCR=false
 #export TARGET_INCLUDE_VIPERFX=true
-export TARGET_ENABLE_BLUR=true
+export TARGET_ENABLE_BLUR=false
 #export WITH_ADB_INSECURE=true
 \
 
