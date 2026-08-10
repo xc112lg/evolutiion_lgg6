@@ -18,6 +18,7 @@ export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
 sed -i '$a -include vendor/lineage-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
 curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/init.qcom.usb.rc.patch | patch -d device/lge/msm8996-common -p0
+curl -sL https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/0001-battery-config-override.patch  | patch -d device/lge/g6-common -p0
  mkdir -p device/lge/msm8996-common/overlay/frameworks/base/core/res/res/values
     curl -sf -o device/lge/msm8996-common/overlay/frameworks/base/core/res/res/values/cr_config.xml \
         https://raw.githubusercontent.com/crdroidandroid/android_frameworks_base/15.0/core/res/res/values/cr_config.xml
@@ -67,6 +68,10 @@ curl -sL https://github.com/xc112lg/android_device_lge_g6-common/commit/89433a83
 #curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/init.qcom.usb.rc.patch | patch -d device/lge/msm8996-common -p0
 
 lunch lineage_h872-bp1a-user
+make installclean
+m bacon
+
+lunch lineage_h870d-bp1a-user
 
 make installclean
 
