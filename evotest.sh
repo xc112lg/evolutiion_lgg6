@@ -10,7 +10,7 @@ rm -rf vendor/lge/msm8996-common
 repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs --depth=1
 # repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs --depth=1
 git clone https://github.com/xc112lg/local_manifests --depth 1 -b lg2 .repo/local_manifests
-repo sync -c -j32 --force-sync --no-clone-bundle --no-tags
+repo sync -c -j64 --force-sync --no-clone-bundle --no-tags
 /opt/crave/resync.sh
 # export TARGET_USES_PICO_GAPPS=true
 # export TARGET_ENABLE_BLUR=false
