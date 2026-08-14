@@ -1,0 +1,18 @@
+--- a/bionic/libc/upstream-openbsd/android/include/arc4random.h
++++ b/bionic/libc/upstream-openbsd/android/include/arc4random.h
+@@ -60,8 +60,14 @@
+ #endif
+ 
+   // Not needed thanks to the MADV_WIPEONFORK below.
+   if (madvise(p, size, MADV_WIPEONFORK) == -1) {
+-    async_safe_fatal("arc4random data MADV_WIPEONFORK failed: %m");
++    // Older kernels (pre-4.14) don't support MADV_WIPEONFORK and return
++    // EINVAL (or ENOSYS on some configs) for the unrecognized advice value.
++    // That's expected on legacy devices (e.g. msm8996) -- fall back instead
++    // of aborting. Only treat genuinely unexpected failures as fatal.
++    if (errno != EINVAL && errno != ENOSYS) {
++      async_safe_fatal("arc4random data MADV_WIPEONFORK failed: %m");
++    }
+   }
+ 
+ #endif
