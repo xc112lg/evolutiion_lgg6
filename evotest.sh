@@ -6,6 +6,7 @@
 rm -rf .repo/local_manifests/
 rm -rf device/lge
 rm -rf vendor/lge/msm8996-common
+rm -rf bionic
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
 repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs --depth=1
 # repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs --depth=1
@@ -21,6 +22,10 @@ export TARGET_USES_PICO_GAPPS=true
 
 
 grep -q 'errno != EINVAL && errno != ENOSYS' bionic/libc/upstream-openbsd/android/include/arc4random.h && echo "already applied, skipping" || curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/arc4random_wipeonfork1.patch | patch -p1
+cd bionic
+git diff --stat
+git log -1 --oneline -- libc/upstream-openbsd/android/include/arc4random.h
+cd ..
 
 source build/envsetup.sh
 
