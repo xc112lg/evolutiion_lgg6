@@ -1,0 +1,25 @@
+--- a/bionic/libc/upstream-openbsd/android/include/arc4random.h
++++ b/bionic/libc/upstream-openbsd/android/include/arc4random.h
+@@ -18,6 +18,7 @@
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  */
+ 
++#include <errno.h>
+ #include <pthread.h>
+ #include <sys/mman.h>
+ #include <sys/prctl.h>
+@@ -61,7 +62,13 @@
+ 
+   // Equivalent to OpenBSD's minherit(MAP_INHERIT_ZERO).
+   if (madvise(p, size, MADV_WIPEONFORK) == -1) {
+-    async_safe_fatal("arc4random data MADV_WIPEONFORK failed: %m");
++    // Older kernels (pre-4.14, e.g. many legacy msm8996 devices) don't
++    // support MADV_WIPEONFORK and return EINVAL/ENOSYS for the unrecognized
++    // advice value. That's expected there -- only abort on genuinely
++    // unexpected failures.
++    if (errno != EINVAL && errno != ENOSYS) {
++      async_safe_fatal("arc4random data MADV_WIPEONFORK failed: %m");
++    }
+   }
+ 
+   // Give the allocation a name to make tombstones more intelligible.
