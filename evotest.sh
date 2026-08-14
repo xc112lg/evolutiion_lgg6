@@ -20,7 +20,7 @@ export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
 
 
-
+grep -q 'errno != EINVAL && errno != ENOSYS' bionic/libc/upstream-openbsd/android/include/arc4random.h && echo "already applied, skipping" || curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/arc4random_wipeonfork1.patch | patch -p1
 
 source build/envsetup.sh
 
