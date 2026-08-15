@@ -26,7 +26,7 @@ grep -q 'errno != EINVAL && errno != ENOSYS' bionic/libc/upstream-openbsd/androi
 sed -i \
   -e 's|KERNEL_LLVM_BIN := $(shell pwd)/$(CLANG) #Using aosp-llvm compiler|KERNEL_LLVM_BIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-latest/bin/clang #Pinned: crDroid clang-r536225 (matches working a15 build)|' \
   -e 's|$(warning "Using aosp-llvm" $(KERNEL_LLVM_BIN))|$(warning "Using pinned crDroid clang-r536225" $(KERNEL_LLVM_BIN))|' \
-  kernel/lge/msm8996/AndroidKernel.mk\
+  kernel/lge/msm8996/AndroidKernel.mk
 cd kernel/lge/msm8996
 git diff
 cd -
