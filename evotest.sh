@@ -23,13 +23,19 @@ export TARGET_USES_PICO_GAPPS=true
 
 grep -q 'errno != EINVAL && errno != ENOSYS' bionic/libc/upstream-openbsd/android/include/arc4random.h && echo "already applied, skipping" || curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/arc4random_wipeonfork1.patch | patch -p1
 # sed -i -e 's|KERNEL_LLVM_BIN := $(shell pwd)/$(CLANG) #Using aosp-llvm compiler|KERNEL_LLVM_BIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r536225/bin/clang #Pinned: aosp-llvm r536225 (matches working a15 build)|' -e 's|$(warning "Using aosp-llvm" $(KERNEL_LLVM_BIN))|$(warning "Using pinned aosp-llvm r536225" $(KERNEL_LLVM_BIN))|' kernel/lge/msm8996/AndroidKernel.mk
+# sed -i \
+#   -e 's|KERNEL_LLVM_BIN := $(shell pwd)/$(CLANG) #Using aosp-llvm compiler|KERNEL_LLVM_BIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-latest/bin/clang #Pinned: crDroid clang-r536225 (matches working a15 build)|' \
+#   -e 's|$(warning "Using aosp-llvm" $(KERNEL_LLVM_BIN))|$(warning "Using pinned crDroid clang-r536225" $(KERNEL_LLVM_BIN))|' \
+#   kernel/lge/msm8996/AndroidKernel.mk
+# cd kernel/lge/msm8996
+# git diff
+# cd -
+
+
 sed -i \
-  -e 's|KERNEL_LLVM_BIN := $(shell pwd)/$(CLANG) #Using aosp-llvm compiler|KERNEL_LLVM_BIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-latest/bin/clang #Pinned: crDroid clang-r536225 (matches working a15 build)|' \
-  -e 's|$(warning "Using aosp-llvm" $(KERNEL_LLVM_BIN))|$(warning "Using pinned crDroid clang-r536225" $(KERNEL_LLVM_BIN))|' \
-  kernel/lge/msm8996/AndroidKernel.mk
-cd kernel/lge/msm8996
-git diff
-cd -
+  -e 's/ClangDefaultVersion = "clang-r[0-9a-zA-Z]*"/ClangDefaultVersion = "clang-r536225"/' \
+  -e 's/ClangDefaultShortVersion = "[0-9]*"/ClangDefaultShortVersion = "19"/' \
+  build/soong/cc/config/global.go
 source build/envsetup.sh
 
 
