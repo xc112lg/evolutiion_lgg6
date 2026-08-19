@@ -11,7 +11,7 @@ rm -rf build/soong
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
-repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs --depth=1
+repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs --depth=1
 #repo init -u https://github.com/crdroidandroid/android.git -b 15.0 --git-lfs --depth=1
 git clone https://github.com/xc112lg/local_manifests --depth 1 -b lg .repo/local_manifests
 repo sync -c -j64 --force-sync --no-clone-bundle --no-tags
