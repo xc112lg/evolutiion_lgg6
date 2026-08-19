@@ -10,8 +10,8 @@ rm -rf vendor/evolution-priv/keys
 rm -rf build/soong
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
-#repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lfs
-repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs --depth=1
+#repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lf
+repo init -u https://github.com/crdroidandroid/android.git -b 16.0-qpr0 --git-lfs --no-clone-bundle --depth=1
 #repo init -u https://github.com/crdroidandroid/android.git -b 15.0 --git-lfs --depth=1
 git clone https://github.com/xc112lg/local_manifests --depth 1 -b lg .repo/local_manifests
 repo sync -c -j64 --force-sync --no-clone-bundle --no-tags
@@ -39,10 +39,10 @@ source build/envsetup.sh
 lunch lineage_h872-bp1a-userdebug
 #lunch lineage_h872-bp4a-userdebug
 # breakfast h872
-make installclean
+#make installclean
 
 # brunch h872
-m evolution
+#m bacon
 
 
 
