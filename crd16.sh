@@ -6,14 +6,13 @@
 rm -rf .repo/local_manifests/
 rm -rf device/lge
 rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
-rm -rf vendor/evolution-priv/keys
-rm -rf build/soong
+
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lf
-repo init -u https://github.com/crdroidandroid/android.git -b 16.0-qpr0 --git-lfs --no-clone-bundle --depth=1
+repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle --depth=1
 #repo init -u https://github.com/crdroidandroid/android.git -b 15.0 --git-lfs --depth=1
-git clone https://github.com/xc112lg/local_manifests --depth 1 -b lg .repo/local_manifests
+git clone https://github.com/xc112lg/local_manifests --depth 1 -b lgcrd16 .repo/local_manifests
 repo sync -c -j64 --force-sync --no-clone-bundle --no-tags
 /opt/crave/resync.sh
 
@@ -25,9 +24,9 @@ export TARGET_ENABLE_BLUR=true
 #export WITH_ADB_INSECURE=true
 
 
-source <(curl -sf https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/blur.sh)  >/dev/null 2>&1
 
-sed -i '$a -include vendor/evolution-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
+
+sed -i '$a -include vendor/lineage-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
 
 source build/envsetup.sh
 
@@ -36,13 +35,13 @@ source build/envsetup.sh
 
 
 
-lunch lineage_h872-bp1a-userdebug
+lunch lineage_h872-bp4a-userdebug
 #lunch lineage_h872-bp4a-userdebug
 # breakfast h872
-#make installclean
+make installclean
 
 # brunch h872
-#m bacon
+m bacon
 
 
 
