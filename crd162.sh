@@ -7,8 +7,8 @@ export BUILD_BCR=false
 #export TARGET_INCLUDE_VIPERFX=true
 export TARGET_ENABLE_BLUR=true
 #export WITH_ADB_INSECURE=true
-export GOMEMLIMIT=22GiB
-export GOGC=50
+export GOMEMLIMIT=10GiB
+export GOGC=25
 
 
 
