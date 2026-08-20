@@ -7,6 +7,7 @@ rm -rf .repo/local_manifests/
 rm -rf device/lge
 rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
 rm -rf hardware/qcom-caf/msm8996
+rm -rf hardware/qcom-caf/common
 
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
@@ -51,7 +52,12 @@ sed -i '/LOCAL_MODULE       := init.radio.sh/,/include \$(BUILD_PREBUILT)/{
   s/LOCAL_VENDOR_MODULE    := true/LOCAL_VENDOR_MODULE    := true\nLOCAL_CHECK_ELF_FILES := false/
 }' device/lge/g6-common/rootdir/Android.mk
 
-
+sed -i '/# Add wlan to PRODUCT_SOONG_NAMESPACES/,/hardware\/qcom-caf\/wlan\/qcwcn/{
+  /# Add wlan to PRODUCT_SOONG_NAMESPACES/i\
+ifeq ($(BOARD_WLAN_DEVICE),qcwcn)
+  /hardware\/qcom-caf\/wlan\/qcwcn$/a\
+endif
+}' hardware/qcom-caf/common/BoardConfigQcom.mk
 
 
 
