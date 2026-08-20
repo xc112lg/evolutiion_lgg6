@@ -14,7 +14,7 @@ export TARGET_ENABLE_BLUR=true
 # export WITH_ADB_INSECURE=true
 
 # Soong / Go memory tuning
-export GOMEMLIMIT=8GiB
+export GOMEMLIMIT=4GiB
 export GOGC=50
 
 # Prevent compiler processes from using excessive threads internally
@@ -34,7 +34,6 @@ source build/envsetup.sh
 lunch lineage_h872-bp4a-userdebug
 
 # Clean installed output without destroying the whole build tree
-make installclean
 
 # ============================================================
 # Build
