@@ -10,7 +10,7 @@ rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lf
-repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle --depth=1
+repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle ---optimized-fetch --depth=1 
 #repo init -u https://github.com/crdroidandroid/android.git -b 15.0 --git-lfs --depth=1
 git clone https://github.com/xc112lg/local_manifests --depth 1 -b lgcrd16 .repo/local_manifests
 repo sync -c -j64 --force-sync --no-clone-bundle --no-tags
