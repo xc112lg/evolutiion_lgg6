@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 rm -rf device/lge
 rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
 rm -rf hardware/qcom-caf/msm8996
-
+rm -rf hardware/qcom-caf/common
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lf
