@@ -25,7 +25,7 @@ export TARGET_ENABLE_BLUR=true
 #export WITH_ADB_INSECURE=true
 
 
-
+ls hardware/qcom-caf/msm8996
 
 sed -i '$a -include vendor/lineage-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
 
