@@ -8,102 +8,154 @@ curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/a4cad4
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/f62d25f16c59dbba1f2f0426ac3c9cba522ac72d.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/f2cfa4e9bb6a324d384bdf910815eb53c5ac1b18.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/af43c52c14ce8b4c85b2bac86391343aa84764d2.patch | git am
+
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/25bc140652706901576db074ba4e27aa0f186b2a.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/3ba063a055ccccc3b417d48fd1cd08fc7caa4f13.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/b613f3508abf45cfc378a0dc6fe72ff31955e385.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/d266d7fc91479f98f863ca388c23f0bb3f2a9460.patch | git am
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/a684327ccfd2f5daa0e7bba4d03a9ae5ce92e2a6.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/b0b72930bfd02118de64186d2e065bbe0e10a098.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/17f23682b05a7bde70c33f1f406eadcb26a045ab.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/21b678884843be4d2899c6e2158c3d5ba4b8c14b.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/c76ed30cc79ae4419084d6cb4c53ed506ac8da04.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/262e24a15acb78594c06ec31eb59c54c6b5e095a.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/8f053b7242b70eba43d4e7d67a74a577414081c4.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0580c4343e5a9c3ae70cf7eac37d6ea184b8634e.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/9e4d0841c9c9160cb912bd0733d2be8af699fbad.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/571cd115019f39b7088af7f2b332a1471456d628.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/4299c74c0bcd98730543bee90e5c1b7d3c6d86c4.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/a4207717a900782baa52205b5f476194daca38c6.patch | git am
+
+
+##  curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/9e4d0841c9c9160cb912bd0733d2be8af699fbad.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/571cd115019f39b7088af7f2b332a1471456d628.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/4299c74c0bcd98730543bee90e5c1b7d3c6d86c4.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/a4207717a900782baa52205b5f476194daca38c6.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/85bcb519c322bf6044d1f9d63b1e970087108a03.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/b64b7a0794833344d38b8c0f66e6871b6a0943ed.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/2f4e36db5a877c23e9455165a451caed20262410.patch | git am
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/78e0f750ba4ced9d483dec42690f46355d7b942f.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/4178236ab8a95de59f65d2b0cf15cb0ba077d85f.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/d0212992252bf940ef9953befe6c81f4c36ea849.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/7a9f7ebe5d135ca7bddb041710a807207b0f1b6b.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/fccdf4e26bbc53095030bc2414fac227412d7dc2.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/8f721605ff75d0b520f96eb9c5ddb5804f3967a3.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/ecb41b94a4038a9ef4ba223b8dec4dfb3f333e6b.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/192840a31c021c8b844c7c40a116d6150063a317.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0cfcb8854ec5c2c25c7ec61ee062a61ce84ef707.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/b07936e9e89000a476518c8004aebb8c4b61ea85.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/12ad8bf74f8c2028252b113d318434b84d5aaa8d.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0a728e979609a43808cb6e1f47e32a79522e8d53.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/7f57ba7628ed07163ae056415e043e9a09bebabf.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0f9717869051ba31fe851d465cab9bbb02c65d50.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/abca68f88b5155ad0b968728bac47876d16e2745.patch | git am
+
+
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0a728e979609a43808cb6e1f47e32a79522e8d53.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/7f57ba7628ed07163ae056415e043e9a09bebabf.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0f9717869051ba31fe851d465cab9bbb02c65d50.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/abca68f88b5155ad0b968728bac47876d16e2745.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/c1e106fb8be280d9621838bb810d4bf61eadf5e4.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/94a5667b04dde9a3113c2fe55019891f41510bc7.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e29f5e21aa29f40d93dd265e41def3223a4411b0.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/5d4072bbba7db0748fab423805f4e71382c46614.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0a2fa42416e17e2ca833c6f1633dce7db1e10611.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/72e4abc00971e8ab72d3e43ab937d635216c7cc7.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/ac1f36526068e63dc602cb42894c478ec0a273eb.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/243b537561e9286029d5c181d19111b13b7c1604.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/3a7313c7198dbe14fca91996a0b8078939070e4e.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/7ca31a7d0746928348cfda7bd2edf86b7eb97222.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/ebddd80da0b6b348ac13689d5051162fb3d76746.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/4c30d6edf2b78e16102944fed39f78d02193cf6f.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/cee8168a5d9d414f923fc2f8a1d4c4dda22b182e.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/f81fc5440529f34c20343c5b170880329812b10a.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/13fa057ca7eed228c449daa5b0f97b88a0455bc7.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/09ca219f4d9465839a5cb39dcaf1e3ee5938ab70.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/92c97bb039b26feadcc6e4ce75de6cac94e0fe1c.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/955e1976ed70abc6f9659e67af1e829a30f7936a.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/daa8a8d6997de59ce2244ba2310fec32001cfe51.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/8272cebc03956f757cf29c85a9d2a02401d957cb.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/c3a748c0ab10a534be737fd83d11be5bfb55220b.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/3c39f3fd548f5d9c187e04332189ea836d647c99.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/a8cf94fde41dd254c2c58d6b5ad74f569c9b29b8.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/2187045a82f5ca1161445062f4cda3fbad8161f4.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/997d711b93a53914347755f57f4f560810dfaf0f.patch | git am
+
+
+get in commit ### curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/997d711b93a53914347755f57f4f560810dfaf0f.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/bea5ba823cdf0347fb356823ca909682c97157d0.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/07c07e318f1bed9f832d7d93187f51fa31d46e74.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/f8c82e996676c779c0e1225489a85a16540f655f.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0778d12157cc9622e30bc618839a6c259d9711e9.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/b3472179a3d0f8a3ca42460d7f46caf7ce404d1e.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/b1b6f63e9f72f6dc70ad67f9fcbe82ddc36d303b.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/514675d080255c0310c5e3043fc4a93bb8df9d75.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/daf1bbf94866c308b302856e6f4ed7ea78ca9108.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/1d24ed9daffff7dfe6e20ad882e4503fbff3053c.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e6c5131ebe8aa7b802f05d277d357a9c80c32da2.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/83583a7b639959b2461ae47f9548ece1f8821d04.patch | git am
+
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/daf1bbf94866c308b302856e6f4ed7ea78ca9108.patch | git am
+skip #curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/1d24ed9daffff7dfe6e20ad882e4503fbff3053c.patch | git am
+curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/1d24ed9daffff7dfe6e20ad882e4503fbff3053c.patch | git am --exclude=net/sctp/sysctl.c --exclude=drivers/pinctrl/bcm/pinctrl-bcm281xx.c --exclude=net/core/netpoll.c --exclude=include/linux/netpoll.h --exclude=net/netfilter/ipvs/ip_vs_ctl.c --exclude=drivers/powercap/powercap_sys.c --exclude=drivers/firmware/iscsi_ibft.c --exclude=drivers/s390/cio/chp.c --exclude=arch/x86/kernel/irq.c --exclude=drivers/gpu/drm/nouveau/nouveau_connector.c --exclude=block/bio.c --exclude=drivers/usb/serial/ftdi_sio_ids.h --exclude=drivers/usb/serial/ftdi_sio.c --exclude=drivers/usb/serial/option.c --exclude=drivers/gpu/drm/gma500/mid_bios.c --exclude=sound/soc/codecs/wm0010.c --exclude=drivers/i2c/busses/i2c-ali1535.c --exclude=drivers/i2c/busses/i2c-ali15x3.c --exclude=drivers/i2c/busses/i2c-sis630.c --exclude=net/bluetooth/6lowpan.c --exclude=net/atm/lec.c --exclude=net/core/neighbour.c --exclude=drivers/mmc/host/atmel-mci.c --exclude=drivers/gpu/drm/radeon/radeon_vce.c --exclude=sound/usb/mixer_quirks.c --exclude=net/atm/mpc.c --exclude=arch/arm/mm/fault.c
+
+
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e6c5131ebe8aa7b802f05d277d357a9c80c32da2.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/83583a7b639959b2461ae47f9548ece1f8821d04.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/5081f96b3cc60fd2098b664cebadb166d88d6693.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/b46c84b095713f9e528cdab49602c45f3f9333e9.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e8b0d09cfea19ee296979106e06065de668edf50.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e3053d117ed10349999c4025bd4d44370a5015b0.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/5b18bc577fad30ceae0e1f172100eecd52c64b05.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/a0f364e3d66f8ded4843dfa1231cf49c96987f62.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0d496ff5ef3a2fc3661b11bc838e8b52eb844bc2.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/d1931bf95ab0a9a6bebf501aff8e5e0b79505f1c.patch | git am
+
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/5ad6dfc6259a14dc8a8a77f9b160874f391fa63d.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/670dc9ad74736e6d77c5bc957506e52c321e015c.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0dc9296da1a0d8f4da783108cc0b3c38a0971bcf.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/a52df55a554085a24720ab2f2e9f63e75ae4e988.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/d713421bd93adb4bf52bc8335c35fc8f774bcd86.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/72d75054ca11bb6579e3d1e1fe4775711298af0c.patch | git am
+
+####get from commit https://github.com/xc112lg/android_kernel_lge_msm8996_r2/commit/da0f7ee5e918cc71a32577ecd27d1cf58ddafc8a
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/9b63217eb1bdfaca1fce0250c12e9eacec412684.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/10398c1bd18e2ddf9ec4c5e68fd6449b6268690b.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/fb89351256c392ab0e57687d5cfa5cbb79b3ccd7.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/531b12deaf02a6480124979826ed4666e45c445f.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/2b4ac16d44238a46acd2eb7a75a5e866d3d1ac57.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/942dfbc233ddfdaba7108e86cd9215d0977cc31a.patch | git am
+
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/cb9b24547e103686bf1341ea57ef283c70075cd4.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/6d0492d4ec5d583e74b865e36912a51dfa62e6d7.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/becf418573f3eb5e1462fddfeebe51db6f6f1624.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/058b9c167e634c0569c22424242c5a22fcf75526.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/eed563343e30da66553f8da0644465e73f2775e4.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/cd85678ef4d0af46c0b3bf5b78f9b63a4f048f4a.patch | git am
+
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/061b94ca0f999d744ec5323f2546714e8fd81340.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/642e5af02fb5030856f7c7180cd595f44eb6788d.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/bdb8ee21ed5b04bca8ba6e25171853d58ad2d25a.patch | git am
@@ -115,8 +167,9 @@ curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/a9bd51
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/d0942844acd466e8a95f9bca8821236c528bcaca.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/5e40d64e57eb4520df94f529f250f18d062de5ec.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/a100d18ab856b8f4ad719faf88082b473e207b69.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/15a8c11ccc82d496541064aec6285800c372b0d1.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/d987768b252269cba25eab633160e93ef2686ad4.patch | git am
+curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/15a8c11ccc82d496541064aec6285800c372b0d1.patch | git am\
+
+missing ##curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/d987768b252269cba25eab633160e93ef2686ad4.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/c653db9e35da6fd4c96c756e00e0fdda15e8dc55.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/93a8ac6268f654d6486e645bb90b952865e7437d.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/dec9bbada1b38eb9c457f72ced228fc861da63e5.patch | git am
@@ -127,35 +180,49 @@ curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/d63abf
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/14f3a45af318c11d7464138012764008bf7222b3.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/b3086fb609e8889b5a090af4d9ac9a513f449290.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/074f15bde568787f03cee295f8d20854a6a74cf5.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/ce4d47e20777562494adf75a349f5aac91a16b9f.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/75409e0d6fea54df5d6c683e60deece2d6b9dc34.patch | git am
+
+
+not needed #curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/ce4d47e20777562494adf75a349f5aac91a16b9f.patch | git am
+not needed #curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/75409e0d6fea54df5d6c683e60deece2d6b9dc34.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/55d365bb3731400f5b2b2bcce75630cfc90458eb.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/ee88e21b826cccc07d9b66daf3a0a01361f7fcf6.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/f221804221fb76a5ef34c931cabaed44fc82a686.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/8c50f2ea31f31af2988691e2aa7c1de3988e2590.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/d93343de3fb7b865244cfad8c1b26e664594a4ec.patch | git am
+
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/fcbb55e4f4a310dcabe9e8eebdd08acc5e07ca0c.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/28ee6a973c531db1cbae6c1f5a54197ed4344ba7.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/5730717de983f1f3faada8f8d0749abb1405e8d4.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0dfd20719c02ea05f6b3333eb89e06f4346a5924.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0646ee127c867924eb7a62baa9544f521f0f7669.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/20f8215fd00627d39a201272e7449e60e648c18d.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/4f62bd9976827f44c5caa63b376fb23f725b6d24.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/19e1352bbc75fb2b67a8c1316697f1c1db77fea6.patch | git am
+
+
+##curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/5730717de983f1f3faada8f8d0749abb1405e8d4.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0dfd20719c02ea05f6b3333eb89e06f4346a5924.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0646ee127c867924eb7a62baa9544f521f0f7669.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/20f8215fd00627d39a201272e7449e60e648c18d.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/4f62bd9976827f44c5caa63b376fb23f725b6d24.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/19e1352bbc75fb2b67a8c1316697f1c1db77fea6.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e8d132d26ae05e66701bd587947c94d9800d8321.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/1d2f1d25551fe0acef20e2be6144a22cba5ce72d.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0c779c7ed80008bf2dc3746777f0ded85599e501.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/baa9899301b9c111b6715b9b9b16521fdcba11db.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/8ed4dc1cc1a7ec30a418f992fe9c67bd81cfbb1f.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/eab1f9df6808ecc2a210fa69a29a5c28746eedd5.patch | git am
+
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/d24045205aaa750ceb60ea447fcc7b0e5b6a1b6e.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/7f406a4c1fd7077bcba70a79fce6a374451e3a96.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/74915cd4a95a9690413f74ab934c54025c478064.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e5a89f20b27526dee61cf921ef6c9e3a6ceedeee.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e7b73dff713129dd636d862b2acee4d2017edea0.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e13825fb0b50c22f0436032bce302258cdd9e1cf.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/2708ecd0c6cfd4ed37a89b3e1b560aa900698b32.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/84a149c05261c75dafef2f88f17bd42db7356b2c.patch | git am
+
+
+##curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e7b73dff713129dd636d862b2acee4d2017edea0.patch | git am
+##curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e13825fb0b50c22f0436032bce302258cdd9e1cf.patch | git am
+check later ##curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/2708ecd0c6cfd4ed37a89b3e1b560aa900698b32.patch | git am
+###curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/84a149c05261c75dafef2f88f17bd42db7356b2c.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/26a9f8713a9b71030ca61b7b7a49a93f9b124dfc.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/a52fb0723d7aaa3c87c5e82e43f4043da6c13ffd.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/5f03c37e983161e6bbcccdd4f68ad367b8460615.patch | git am
@@ -166,6 +233,9 @@ curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/2c41ea
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/64a6bf07d26700a8ebdb802310f66260c2dc3916.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/3f6e6b91adf5f820d79f3f019030f53aa309f2e5.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/b3aad83dc313381ba342393b92eab6cbafcb305e.patch | git am
+
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/1651cff9895134d21c7b502c4639a4c04119287e.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/39b0f47189394bfb9d557a4a8541b87b85ed4782.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/ee82ee0efff100ba126dc6ed83f41ba45e4cd421.patch | git am
@@ -183,6 +253,9 @@ curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/c06589
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/b57087120bc9c0e288a1ac3f86ca638d746865af.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/f1a36e6c8dd20219269b417a3db119f867c9655a.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/dfaf0e5724e7791dd394536e38c26f9522aa707d.patch | git am
+
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0cd6ad6cc3e682e57730ab6091a9c75501cc4a23.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/0864b80d07facdcdf418db2b9eaa547d5b9854d6.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/d8fd537ca40d7d13e62cb5f81ff09577ad04547b.patch | git am
@@ -194,8 +267,11 @@ curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/c53d32
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/11776e7e37886796688c9b1bd832bb842ef0c2bc.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/610bf987aacba5d4dee98d1464f363785846fa6d.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/04485e3e49dbb409b3efc9a8dda090772f69a1e7.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/c31727908d63894e71564b97438a4abc6c38aced.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/3e2acd00c5540549af627746efe065295889b2e9.patch | git am
+
+
+check later #curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/c31727908d63894e71564b97438a4abc6c38aced.patch | git am
+
+##curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/3e2acd00c5540549af627746efe065295889b2e9.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/129002869e8994bed871c5e6ea7a0aa269a4d769.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/79ccfb2e9f14cafc9fe17ce886c75fda1b4a711c.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/4eefff69d24bd54e84b44311b36c067183be5610.patch | git am
@@ -203,11 +279,14 @@ curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/3d2c70
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/d788babbca7f276d54ee91b7f540aa54e2e51200.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/3c7f11bf06ec0b72a2dcf961e7b06ff385d94e4c.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/68f969dbf154fbdc277786dc4af81c38f32c7adc.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/f4ab0670eda0c1a4bf33eb8490a4d40514575df7.patch | git am
+
+
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/f4ab0670eda0c1a4bf33eb8490a4d40514575df7.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/eb01dd8f6e22f36687cb7678066aef900d939d0d.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/82c38140e3d0782ac5d3f3b82735a13173705c67.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/cdfa8d7edc5e73fd3ceadfd3394951da489a4cf5.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/fe696c408d8ea7c79df31b4dc95ffeeb874b7273.patch | git am
+
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/fe696c408d8ea7c79df31b4dc95ffeeb874b7273.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/a0ec89aca20a98e6a928695f076067396d21d7cb.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/97bf5865d528056461fd7630b33f34ba059aed4f.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/fa086e850fff1f7ab822351600cd680a6a1564b7.patch | git am
@@ -218,6 +297,8 @@ curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/c9dc46
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/c7789471c12a64f1cc400be911380403cf0c6666.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/bf8e6ab170dc66dd20acbb0b00d217e5ff345c90.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/5f966f6dea366e3e1a8d5fab905a121c4de751eb.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/cc788cd92cb828d5365041dd593017a15d718ca9.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/2a73902ec871744b30352a5fb4d95654601ea9e9.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/6b82cdf0f9b4e1dd12ff6adf70b9cad476545be5.patch | git am
@@ -226,9 +307,11 @@ curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/c6416a
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/9920cfad6ffae2333aea962a396800a96aee7875.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/f884e051196e84bd68bce20cabf11c5db172acf1.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/874b3eee3cd974c9244895a948f54e7e739d32ee.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/b90fdf5490c80cfc4cdb4a3b397bd572faf09980.patch | git am
-curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/2bb66a6b9b3aa66b514e00f8a28f8c25e381e7b2.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/b90fdf5490c80cfc4cdb4a3b397bd572faf09980.patch | git am
+#curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/2bb66a6b9b3aa66b514e00f8a28f8c25e381e7b2.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/db7abfa174e446efd7cb368e4add9c89ef148f00.patch | git am
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/cbc85ee6be1c846503d38628fba1e18b41459799.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/1957752bf335566096badead2e71f9b8b6c9a069.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/93efdd5c29a9b613afdb364dda11a4d2c36905fb.patch | git am
@@ -242,6 +325,9 @@ curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e176fe
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/f8a3ea86a0487e187ba11c89536834bd4a7cf92c.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/78f8d86f5480369290980a1861e57b23d6f9ca1e.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/8bca030736c9c33a5385f966ebc356314dde8628.patch | git am
+
+
+
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/e3b1ff4f69c50830fc76fbb8754787b282d584e9.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/1feae3766893a3af0a96d0b699cce0074dab4bb1.patch | git am
 curl -L https://github.com/Inkypen79/android_kernel_xiaomi_msm8996/commit/bd8e36569b64f14e9f612ca21a59692dd1ff57f8.patch | git am
