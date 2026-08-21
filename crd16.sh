@@ -26,7 +26,7 @@ export TARGET_ENABLE_BLUR=true
 #export WITH_ADB_INSECURE=true
 
 
-ls hardware/qcom-caf/msm8996
+grep -q 'errno != EINVAL && errno != ENOSYS' bionic/libc/upstream-openbsd/android/include/arc4random.h && echo "already applied, skipping" || curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/arc4random_wipeonfork1.patch | patch -p1
 
 sed -i '$a -include vendor/lineage-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
 
