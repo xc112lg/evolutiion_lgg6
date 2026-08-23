@@ -4,6 +4,9 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Don't treat non-existent globs as literal strings (fixes uploading "*.zip" etc. when no matches)
+shopt -s nullglob
+
 # Check and load environment variables from .env
 if [ -f .env ]; then
     export $(cat .env | grep -v '#' | xargs)
@@ -33,16 +36,39 @@ fi
 
 version=${custom_version:-"EvolutionX-16.0-$(date '+%Y%m%d')"}
 
+# --- Cleanup any pre-existing release/tag for this version ---
+# These three checks are independent: a release can exist without a tag
+# (or vice versa) if a previous run died partway through, so each one
+# must be checked and removed on its own instead of nesting them together.
+
+# Delete existing GitHub release, if present
 if gh release view "$version" &> /dev/null; then
-    echo "Deleting existing tag and releases for $version..."
+    echo "Deleting existing release for $version..."
     gh release delete "$version" --yes
-    git tag -d "$version"
-    git push origin --delete "$version"
-    echo "Existing tag and releases deleted."
 fi
 
-git tag -a "$version" -m "Release $version"
-git push origin "$version" --force
+# Delete existing local tag, if present
+if git rev-parse -q --verify "refs/tags/$version" >/dev/null; then
+    echo "Deleting existing local tag $version..."
+    git tag -d "$version"
+fi
+
+# Delete existing remote tag, if present
+if git ls-remote --exit-code --tags origin "refs/tags/$version" &> /dev/null; then
+    echo "Deleting existing remote tag $version..."
+    git push origin --delete "$version"
+fi
+
+# Create and push the fresh tag
+if ! git tag -a "$version" -m "Release $version"; then
+    echo "Error: Failed to create tag $version (it may still exist unexpectedly)."
+    exit 1
+fi
+
+if ! git push origin "$version" --force; then
+    echo "Error: Failed to push tag $version to origin."
+    exit 1
+fi
 
 declare -a filenames
 filenames=(*.zip *.img *.txt *.json)
@@ -72,7 +98,7 @@ for filename in "${filenames[@]}"; do
     if [ -f "$filename" ]; then
         download_url="https://github.com/$GITHUB_OWNER/$GITHUB_REPO/releases/download/$RELEASE_TAG/$filename"
         file_size=$(du -h "$filename" 2>/dev/null | cut -f1)
-        
+
         FILE_ENTRIES+=("${filename}|${download_url}|${file_size}")
     fi
 done
@@ -112,7 +138,7 @@ for file_entry in "${FILE_ENTRIES[@]}"; do
     remaining="${file_entry#*|}"
     url="${remaining%%|*}"
     size="${remaining##*|}"
-    
+
     # Known device codenames to detect in the filename (add more as needed)
     known_devices=( "h870d" "h870" "h871" "h872" "h873" "h930" "us997" "ls993" "vs988" "as993")
     device_code=""
@@ -213,14 +239,14 @@ else
     # Check message length
     MSG_LENGTH=${#TELEGRAM_MESSAGE}
     echo "Message length: $MSG_LENGTH characters"
-    
+
     # Telegram caption limit (conservative estimate)
     CAPTION_LIMIT=3500
 
     if [ $MSG_LENGTH -le $CAPTION_LIMIT ]; then
         # Message fits in caption - send as merged
         echo "✓ Message fits in caption - sending merged (image + text in one)"
-        
+
         TEMP_JSON=$(mktemp)
         cat > "$TEMP_JSON" << JSONEOF
 {
@@ -254,7 +280,7 @@ JSONEOF
     # FALLBACK: Send image and text separately if needed
     if [ "$FALLBACK" == "1" ]; then
         echo "Sending image first..."
-        
+
         # Send image
         curl -s -X POST \
             -H "Content-Type: application/json" \
@@ -262,7 +288,7 @@ JSONEOF
             "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendPhoto" > /dev/null
 
         echo "Sending full message..."
-        
+
         # Send full text message
         TEMP_JSON=$(mktemp)
         cat > "$TEMP_JSON" << JSONEOF
