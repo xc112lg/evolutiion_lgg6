@@ -73,7 +73,7 @@ EOF
 
 grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py ||
 sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
-cat build/soong/scripts/gen_build_prop.py
+#cat build/soong/scripts/gen_build_prop.py
 
 
 export WITH_ADB_INSECURE=true
