@@ -86,7 +86,7 @@ source build/envsetup.sh
 
 
 
-lunch lineage_h872-bp4a-user
+lunch lineage_h872-bp4a-userdebug
 #lunch lineage_h872-bp4a-userdebug
 # breakfast h872
 make installclean
