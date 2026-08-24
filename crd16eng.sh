@@ -8,6 +8,7 @@ rm -rf device/lge
 rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
 rm -rf hardware/qcom-caf/msm8996
 rm -rf hardware/qcom-caf/common
+
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lf
@@ -23,11 +24,9 @@ export BUILD_BCR=false
 #export TARGET_INCLUDE_VIPERFX=true
 export TARGET_ENABLE_BLUR=true
 #export WITH_ADB_INSECURE=true
-export GOMEMLIMIT=22GiB
-export GOGC=50
 
 
-ls hardware/qcom-caf/msm8996
+grep -q 'errno != EINVAL && errno != ENOSYS' bionic/libc/upstream-openbsd/android/include/arc4random.h && echo "already applied, skipping" || curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/arc4random_wipeonfork1.patch | patch -p1
 
 sed -i '$a -include vendor/lineage-priv/keys/keys.mk' device/lge/msm8996-common/msm8996.mk
 
@@ -60,6 +59,24 @@ ifeq ($(BOARD_WLAN_DEVICE),qcwcn)
 endif
 }' hardware/qcom-caf/common/BoardConfigQcom.mk
 
+
+mkdir -p device/lge/msm8996-common/sepolicy/vendor-user
+if [ ! -f device/lge/msm8996-common/sepolicy/vendor-user/file.te ]; then
+    echo 'type sensors_data_file, file_type, data_file_type;' > device/lge/msm8996-common/sepolicy/vendor-user/file.te
+fi
+grep -q "sepolicy/vendor-user" device/lge/msm8996-common/BoardConfigCommon.mk || cat >> device/lge/msm8996-common/BoardConfigCommon.mk << 'EOF'
+
+ifeq ($(TARGET_BUILD_VARIANT),user)
+BOARD_VENDOR_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy/vendor-user $(BOARD_VENDOR_SEPOLICY_DIRS)
+endif
+EOF
+
+grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py ||
+sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
+#cat build/soong/scripts/gen_build_prop.py
+
+
+export WITH_ADB_INSECURE=true
 
 
 source build/envsetup.sh
