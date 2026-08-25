@@ -82,10 +82,6 @@ export WITH_ADB_INSECURE=true
 source build/envsetup.sh
 
 
-
-
-ls vendor/lineage-priv/keys
-
 lunch lineage_h872-bp4a-eng
 #lunch lineage_h872-bp4a-userdebug
 # breakfast h872
