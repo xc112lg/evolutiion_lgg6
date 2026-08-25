@@ -14,7 +14,7 @@ rm -rf hardware/qcom-caf/common
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lf
 repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle --depth=1 
 #repo init -u https://github.com/crdroidandroid/android.git -b 15.0 --git-lfs --depth=1
-git clone https://github.com/xc112lg/local_manifests --depth 1 -b lgcrd16 .repo/local_manifests
+git clone https://github.com/xc112lg/local_manifests --depth 1 -b ll .repo/local_manifests
 repo sync -c -j64 --force-sync --no-clone-bundle --optimized-fetch  --no-tags
 /opt/crave/resync.sh
 
