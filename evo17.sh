@@ -8,7 +8,7 @@ rm -rf device/lge
 rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
 rm -rf hardware/qcom-caf/msm8996
 rm -rf hardware/qcom-caf/common vendor/lineage-priv/keys
-
+rm -rf .repo/manifests
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lf
@@ -17,6 +17,8 @@ repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs --depth=1
 git clone https://github.com/xc112lg/local_manifests --depth 1 -b evo16 .repo/local_manifests
 repo sync -c -j64 --force-sync --no-clone-bundle --optimized-fetch  --no-tags
 /opt/crave/resync.sh
+
+sed -i -e '\#<linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8996/Android.bp" />#d' -e '\#<linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8996/Android.mk" />#d' .repo/manifests/snippets/lineage.xml
 
 export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
