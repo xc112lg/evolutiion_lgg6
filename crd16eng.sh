@@ -4,10 +4,10 @@
 
 
 rm -rf .repo/local_manifests/
-rm -rf device/lge
+rm -rf device/lge vendor/lineage-priv/keys
 rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
 rm -rf hardware/qcom-caf/msm8996
-rm -rf hardware/qcom-caf/common
+rm -rf hardware/qcom-caf/common 
 
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
