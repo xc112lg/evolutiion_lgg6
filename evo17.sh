@@ -16,7 +16,7 @@ repo init -u https://github.com/Evolution-X/manifest -b bka --git-lfs --depth=1
 #repo init -u https://github.com/crdroidandroid/android.git -b 15.0 --git-lfs --depth=1
 git clone https://github.com/xc112lg/local_manifests --depth 1 -b evo16 .repo/local_manifests
 #sed -i -e '\#<linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8996/Android.bp" />#d' -e '\#<linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8996/Android.mk" />#d' .repo/manifests/snippets/lineage.xml
-repo sync -c -j64 --force-sync --no-clone-bundle --optimized-fetch  --no-tags
+repo sync -c -j64 --force-sync --no-clone-bundle --optimized-fetch  --no-tags >/dev/null 2>&1
 /opt/crave/resync.sh
 
 
