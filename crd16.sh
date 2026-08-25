@@ -4,10 +4,10 @@
 
 
 rm -rf .repo/local_manifests/
-rm -rf device/lge
+rm -rf device/lge vendor/lineage-priv/keys
 rm -rf vendor/lge/msm8996-common kernel/lge/msm8996
 rm -rf hardware/qcom-caf/msm8996
-rm -rf hardware/qcom-caf/common vendor/lineage-priv/keys
+rm -rf hardware/qcom-caf/common 
 
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
@@ -84,7 +84,7 @@ source build/envsetup.sh
 
 
 
-
+ls vendor/lineage-priv/keys
 
 lunch lineage_h872-bp4a-eng
 #lunch lineage_h872-bp4a-userdebug
