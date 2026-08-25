@@ -91,16 +91,9 @@ lunch lineage_h872-bp4a-eng
 # breakfast h872
 make installclean
 
-# brunch h872
+# brunch h872 test
 m evolution
 
-
-
-#lunch lineage_h872-bp4a-eng
-#make installclean
-#make clean # one time
-#m bacon
-#m evolution
 
 #curl -sf https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/upevo.sh  | bash >/dev/null 2>&1
 curl -sf https://raw.githubusercontent.com/xc112lg/testonly/refs/heads/main/testevo.sh  | bash >/dev/null 2>&1
