@@ -75,7 +75,7 @@ grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/
 sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
 #cat build/soong/scripts/gen_build_prop.py
 
-
+grep -qxF 'set_prop(priv_app, debug_tracing_desktop_mode_visible_tasks_prop)' system/sepolicy/private/priv_app.te || echo 'set_prop(priv_app, debug_tracing_desktop_mode_visible_tasks_prop)' >> system/sepolicy/private/priv_app.te
 export WITH_ADB_INSECURE=true
 
 
