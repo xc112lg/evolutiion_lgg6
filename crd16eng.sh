@@ -78,7 +78,30 @@ sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("
 grep -qxF 'set_prop(priv_app, debug_tracing_desktop_mode_visible_tasks_prop)' system/sepolicy/private/priv_app.te || echo 'set_prop(priv_app, debug_tracing_desktop_mode_visible_tasks_prop)' >> system/sepolicy/private/priv_app.te
 export WITH_ADB_INSECURE=true
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/blur.sh)
-sed -i '/name: "camera.msm8996",/,/^}$/d' vendor/lge/g6-common/Android.bp
+
+perl -0777 -i -pe '
+while (/cc_prebuilt_library_shared\s*\{/g) {
+    my $start = $-[0];
+    my $pos = pos($_);
+    my $depth = 1;
+
+    while ($depth && $pos < length($_)) {
+        my $c = substr($_, $pos++, 1);
+        $depth++ if $c eq "{";
+        $depth-- if $c eq "}";
+    }
+
+    my $block = substr($_, $start, $pos - $start);
+
+    if ($block =~ /^\s*cc_prebuilt_library_shared\s*\{\s*name:\s*"camera\.msm8996",/s) {
+        substr($_, $start, $pos - $start) = "";
+        pos($_) = $start;
+    }
+}
+' Android.bp
+
+
+
 source build/envsetup.sh
 
 
