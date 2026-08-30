@@ -17,7 +17,7 @@ repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --n
 git clone https://github.com/xc112lg/local_manifests --depth 1 -b ll .repo/local_manifests
 # repo sync -c -j64 --force-sync --no-clone-bundle --optimized-fetch  --no-tags >/dev/null 2>&1
 # /opt/crave/resync.sh
-source <(curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/resync.sh)
+curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/resync.sh | bash
 export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
 export BUILD_BCR=false
