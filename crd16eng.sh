@@ -79,7 +79,7 @@ grep -qxF 'set_prop(priv_app, debug_tracing_desktop_mode_visible_tasks_prop)' sy
 export WITH_ADB_INSECURE=true
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/blur.sh)
 
-for MOD in "camera\.msm8996" "libmmcamera_interface" "libmmjpeg_interface" "libqomx_core"; do
+for MOD in "camera\.msm8996" "libmmcamera_interface" "libmmjpeg_interface" "libqomx_core" "mm-qcamera-app" "libmm-qcamera" "libmmcamera_tuning"; do
 perl -0777 -i -pe "
 while (/cc_prebuilt_library_shared\s*\{/g) {
     my \$start = \$-[0];
