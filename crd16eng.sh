@@ -79,26 +79,60 @@ grep -qxF 'set_prop(priv_app, debug_tracing_desktop_mode_visible_tasks_prop)' sy
 export WITH_ADB_INSECURE=true
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/blur.sh)
 
-for MOD in "camera\.msm8996" "libmmcamera_interface" "libmmjpeg_interface" "libqomx_core" "mm-qcamera-app" "libmm-qcamera" "libmmcamera_tuning"; do
+# Remove shared library modules
+for MOD in \
+    "camera\.msm8996" \
+    "libmmcamera_interface" \
+    "libmmjpeg_interface" \
+    "libqomx_core" \
+    "libmmcamera_tuning" \
+    "libmm-qcamera"; do
+
+    perl -0777 -i -pe "
+    while (/cc_prebuilt_library_shared\s*\{/g) {
+        my \$start = \$-[0];
+        my \$pos = pos(\$_);
+        my \$depth = 1;
+
+        while (\$depth && \$pos < length(\$_)) {
+            my \$c = substr(\$_, \$pos++, 1);
+            \$depth++ if \$c eq '{';
+            \$depth-- if \$c eq '}';
+        }
+
+        my \$block = substr(\$_, \$start, \$pos - \$start);
+
+        if (\$block =~ /^\s*cc_prebuilt_library_shared\s*\{\s*name:\s*\"$MOD\",/s) {
+            substr(\$_, \$start, \$pos - \$start) = '';
+            pos(\$_) = \$start;
+        }
+    }
+    " vendor/lge/g6-common/Android.bp
+done
+
+# Remove mm-qcamera-app binary
+MOD="mm-qcamera-app"
+
 perl -0777 -i -pe "
-while (/cc_prebuilt_library_shared\s*\{/g) {
+while (/cc_prebuilt_binary\s*\{/g) {
     my \$start = \$-[0];
     my \$pos = pos(\$_);
     my \$depth = 1;
+
     while (\$depth && \$pos < length(\$_)) {
         my \$c = substr(\$_, \$pos++, 1);
         \$depth++ if \$c eq '{';
         \$depth-- if \$c eq '}';
     }
+
     my \$block = substr(\$_, \$start, \$pos - \$start);
-    if (\$block =~ /^\s*cc_prebuilt_library_shared\s*\{\s*name:\s*\"$MOD\",/s) {
+
+    if (\$block =~ /^\s*cc_prebuilt_binary\s*\{\s*name:\s*\"$MOD\",/s) {
         substr(\$_, \$start, \$pos - \$start) = '';
         pos(\$_) = \$start;
     }
 }
 " vendor/lge/g6-common/Android.bp
-done
-
 
 
 source build/envsetup.sh
