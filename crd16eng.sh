@@ -98,7 +98,7 @@ while (/cc_prebuilt_library_shared\s*\{/g) {
         pos($_) = $start;
     }
 }
-' Android.bp
+' vendor/lge/g6-common/Android.bp
 
 
 
