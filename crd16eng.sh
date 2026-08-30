@@ -134,6 +134,12 @@ while (/cc_prebuilt_binary\s*\{/g) {
 }
 " vendor/lge/g6-common/Android.bp
 
+sed -i \
+    -e '/^[[:space:]]*libmm-qcamera[[:space:]]*\\\{0,1\}[[:space:]]*$/d' \
+    -e '/^[[:space:]]*libmmcamera_tuning[[:space:]]*\\\{0,1\}[[:space:]]*$/d' \
+    -e '/^[[:space:]]*mm-qcamera-app[[:space:]]*\\\{0,1\}[[:space:]]*$/d' \
+    vendor/lge/g6-common/g6-common-vendor.mk
+
 
 source build/envsetup.sh
 
