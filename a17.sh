@@ -140,6 +140,14 @@ sed -i \
     -e '/^[[:space:]]*mm-qcamera-app[[:space:]]*\\\{0,1\}[[:space:]]*$/d' \
     vendor/lge/g6-common/g6-common-vendor.mk
 
+if grep -q 'debug.SetMemoryLimit(40 \* 1024 \* 1024 \* 1024)' build/soong/cmd/soong_build/main.go; then
+    echo "Soong memory limit patch already applied, skipping."
+else
+    curl -Ls https://github.com/yaap-17-stone/build_soong/commit/f9c27b0b9298f6eeee9a850346e0a646c3eaeb87.patch | \
+        git -C build/soong am
+fi
+
+for MOD in "camera\.msm8996" "libmmcamera_interface" "libmmjpeg_interface" "libqomx_core" "libmmcamera_tuning" "libmm-qcamera" "mm-qcamera-app"; do perl -i -ne "print unless /^\s*$MOD\s*\\\\?\s*\$/;" vendor/lge/g6-common/g6-common-vendor.mk; done
 
 source build/envsetup.sh
 
