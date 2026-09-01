@@ -85,8 +85,7 @@ for MOD in \
     "libmmjpeg_interface" \
     "libqomx_core" \
     "libmmcamera_tuning" \
-    "libmm-qcamera"
-    mm-qcamera-app; do
+    "libmm-qcamera"; do
 
     perl -0777 -i -pe "
     while (/cc_prebuilt_library_shared\s*\{/g) {
