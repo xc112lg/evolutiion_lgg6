@@ -15,7 +15,7 @@ KDZTOOLS="$ANDROID_ROOT/kdztools"
 KDZ_FILE="$ANDROID_ROOT/H87220g_00_1228.kdz"
 
 KDZ_OUT="$ANDROID_ROOT/H87220g_extracted"
-DZ_FILE="$KDZ_OUT/H87220g_00.dz"
+DZ_FILE="$KDZ_OUT/H93220s_00.dz"
 
 PARTITIONS_OUT="$ANDROID_ROOT/H87220g_partitions"
 SYSTEM_IMAGE="$PARTITIONS_OUT/system.image"
@@ -95,7 +95,7 @@ if [ ! -d "$ANDROID_ROOT/tools/extract-utils/.git" ]; then
         exit 1
     fi
 
-    git clone -b lineage-23.2 \
+    git clone -b lineage-22.2 \
         https://github.com/LineageOS/android_tools_extract-utils.git \
         "$ANDROID_ROOT/tools/extract-utils"
 else
