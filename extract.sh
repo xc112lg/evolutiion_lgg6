@@ -95,7 +95,7 @@ if [ ! -d "$ANDROID_ROOT/tools/extract-utils/.git" ]; then
         exit 1
     fi
 
-    git clone -b lineage-22.2 \
+    git clone -b lineage-21.0 \
         https://github.com/LineageOS/android_tools_extract-utils.git \
         "$ANDROID_ROOT/tools/extract-utils"
 else
