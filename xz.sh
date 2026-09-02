@@ -2,11 +2,19 @@
 set -e
 
 # ================================================
+
 # LG H872 KDZ -> DZ -> system.image -> Vendor blobs
+
+# Python extract-utils version
+
 # ================================================
+
 #
-# This script DOES NOT delete existing completed extraction data.
+
+# This script does NOT delete existing completed extraction data.
+
 # Existing outputs are reused whenever possible.
+
 #
 
 ANDROID_ROOT="/tmp/src/android"
@@ -27,152 +35,189 @@ H872_TREE="$ANDROID_ROOT/device/lge/h872"
 
 echo "=========================================="
 echo " H872 KDZ Vendor Extraction"
+echo " Python extract-utils version"
 echo "=========================================="
 echo
 
 # ------------------------------------------
+
 # Check required files
+
 # ------------------------------------------
 
 if [ ! -f "$KDZ_FILE" ]; then
-    echo "ERROR: KDZ file not found:"
-    echo "  $KDZ_FILE"
-    exit 1
+echo "ERROR: KDZ file not found:"
+echo "  $KDZ_FILE"
+exit 1
 fi
 
 if [ ! -d "$KDZTOOLS" ]; then
-    echo "ERROR: kdztools not found:"
-    echo "  $KDZTOOLS"
-    exit 1
+echo "ERROR: kdztools not found:"
+echo "  $KDZTOOLS"
+exit 1
+fi
+
+if [ ! -d "$H872_TREE" ]; then
+echo "ERROR: H872 device tree not found:"
+echo "  $H872_TREE"
+exit 1
+fi
+
+if [ ! -f "$H872_TREE/extract-files.py" ]; then
+echo "ERROR: extract-files.py not found:"
+echo "  $H872_TREE/extract-files.py"
+exit 1
 fi
 
 # ------------------------------------------
-# Install dependencies
+
+# Check extract-utils
+
 # ------------------------------------------
 
+EXTRACT_UTILS="$ANDROID_ROOT/tools/extract-utils"
+
+if [ ! -d "$EXTRACT_UTILS" ]; then
+echo
+echo "ERROR: extract-utils not found:"
+echo "  $EXTRACT_UTILS"
+exit 1
+fi
+
+if [ ! -f "$EXTRACT_UTILS/extract_utils/main.py" ]; then
+echo
+echo "WARNING: Could not find:"
+echo "  $EXTRACT_UTILS/extract_utils/main.py"
+echo
+echo "Make sure your extract-utils migration is installed correctly."
+fi
+
+# ------------------------------------------
+
+# Install dependencies
+
+# ------------------------------------------
+
+echo
 echo "[+] Installing dependencies..."
 
 sudo apt update
 
-sudo apt install -y \
-    python3 \
-    python3-pip \
-    python3-venv \
-    e2fsprogs \
-    python3-zstandard
+sudo apt install -y 
+python3 
+python3-pip 
+python3-venv 
+e2fsprogs 
+python3-zstandard
 
 # ------------------------------------------
+
 # Verify zstandard
+
 # ------------------------------------------
 
 if python3 -c "import zstandard" >/dev/null 2>&1; then
-    echo "[+] Python zstandard module OK"
+echo "[+] Python zstandard module OK"
 else
-    echo "[!] python3-zstandard package did not provide zstandard."
-    echo "[+] Trying pip..."
+echo "[!] python3-zstandard package did not provide zstandard."
+echo "[+] Trying pip..."
 
-    python3 -m pip install --user zstandard
+```
+python3 -m pip install --user zstandard
 
-    if ! python3 -c "import zstandard" >/dev/null 2>&1; then
-        echo "ERROR: Failed to install Python zstandard module!"
-        exit 1
-    fi
+if ! python3 -c "import zstandard" >/dev/null 2>&1; then
+    echo "ERROR: Failed to install Python zstandard module!"
+    exit 1
+fi
+```
+
 fi
 
 # ------------------------------------------
-# Install extract-utils only if missing
-# ------------------------------------------
 
-if [ ! -d "$ANDROID_ROOT/tools/extract-utils/.git" ]; then
-    echo "[+] Installing LineageOS extract-utils..."
-
-    mkdir -p "$ANDROID_ROOT/tools"
-
-    if [ -d "$ANDROID_ROOT/tools/extract-utils" ]; then
-        echo "[!] extract-utils directory exists but is not a git repository."
-        echo "[!] Leaving it untouched to avoid deleting existing data."
-        echo "[!] Please fix or remove it manually."
-        exit 1
-    fi
-
-    git clone -b lineage-22.2 \
-        https://github.com/LineageOS/android_tools_extract-utils.git \
-        "$ANDROID_ROOT/tools/extract-utils"
-else
-    echo "[+] extract-utils already exists, skipping"
-fi
-
-# ------------------------------------------
 # KDZ -> DZ
+
 # ------------------------------------------
 
 if [ ! -f "$DZ_FILE" ]; then
-    echo
-    echo "[+] Extracting KDZ..."
+echo
+echo "[+] Extracting KDZ..."
 
-    mkdir -p "$KDZ_OUT"
+```
+mkdir -p "$KDZ_OUT"
 
-    cd "$KDZTOOLS"
+cd "$KDZTOOLS"
 
-    python3 unkdz.py \
-        -f "$KDZ_FILE" \
-        -x \
-        -d "$KDZ_OUT"
+python3 unkdz.py \
+    -f "$KDZ_FILE" \
+    -x \
+    -d "$KDZ_OUT"
+```
+
 else
-    echo
-    echo "[+] DZ already exists, skipping KDZ extraction:"
-    echo "    $DZ_FILE"
+echo
+echo "[+] DZ already exists, skipping KDZ extraction:"
+echo "    $DZ_FILE"
 fi
 
 # ------------------------------------------
+
 # Verify DZ
+
 # ------------------------------------------
 
 if [ ! -f "$DZ_FILE" ]; then
-    echo
-    echo "ERROR: DZ file was not created!"
-    echo "Expected:"
-    echo "  $DZ_FILE"
-    exit 1
+echo
+echo "ERROR: DZ file was not created!"
+echo
+echo "Expected:"
+echo "  $DZ_FILE"
+echo
+echo "Files extracted from KDZ:"
+ls -lah "$KDZ_OUT" 2>/dev/null || true
+exit 1
 fi
 
 # ------------------------------------------
+
 # DZ -> Partition images
+
 # ------------------------------------------
-#
-# Do NOT delete existing partitions.
-# Only extract if system.image is missing.
-#
 
 if [ ! -f "$SYSTEM_IMAGE" ]; then
-    echo
-    echo "[+] Extracting DZ partitions..."
+echo
+echo "[+] Extracting DZ partitions..."
 
-    mkdir -p "$PARTITIONS_OUT"
+```
+mkdir -p "$PARTITIONS_OUT"
 
-    cd "$KDZTOOLS"
+cd "$KDZTOOLS"
 
-    python3 undz.py \
-        -f "$DZ_FILE" \
-        -s \
-        -d "$PARTITIONS_OUT"
+python3 undz.py \
+    -f "$DZ_FILE" \
+    -s \
+    -d "$PARTITIONS_OUT"
+```
+
 else
-    echo
-    echo "[+] system.image already exists."
-    echo "[+] Skipping DZ extraction."
+echo
+echo "[+] system.image already exists."
+echo "[+] Skipping DZ extraction."
 fi
 
 # ------------------------------------------
+
 # Verify system.image
+
 # ------------------------------------------
 
 if [ ! -f "$SYSTEM_IMAGE" ]; then
-    echo
-    echo "ERROR: system.image was not created!"
-    echo
-    echo "Current partition files:"
-    ls -lah "$PARTITIONS_OUT" 2>/dev/null || true
-    exit 1
+echo
+echo "ERROR: system.image was not created!"
+echo
+echo "Current partition files:"
+ls -lah "$PARTITIONS_OUT" 2>/dev/null || true
+exit 1
 fi
 
 echo
@@ -184,73 +229,92 @@ echo "[+] Checking filesystem type:"
 file "$SYSTEM_IMAGE"
 
 # ------------------------------------------
+
 # system.image -> h872_stock
+
 # ------------------------------------------
+
 #
-# Skip extraction if stock/system already exists.
-# Do not delete existing completed stock extraction.
+
+# The Python extract-files.py script expects a
+
+# source directory containing system/vendor.
+
 #
 
 if [ ! -d "$STOCK_DIR/system" ]; then
-    echo
-    echo "[+] Extracting system.image with debugfs..."
+echo
+echo "[+] Extracting system.image with debugfs..."
 
-    mkdir -p "$STOCK_DIR"
+```
+mkdir -p "$STOCK_DIR"
 
-    # Only remove the temporary dump directory.
-    # STOCK_DIR is NEVER deleted.
-    if [ -d "$SYSTEM_DUMP" ]; then
-        echo "[!] Removing old temporary dump:"
-        echo "    $SYSTEM_DUMP"
-        rm -rf "$SYSTEM_DUMP"
-    fi
+# Only remove temporary extraction data.
+# Do NOT remove STOCK_DIR.
+if [ -d "$SYSTEM_DUMP" ]; then
+    echo "[!] Removing old temporary dump:"
+    echo "    $SYSTEM_DUMP"
 
-    mkdir -p "$SYSTEM_DUMP"
+    rm -rf "$SYSTEM_DUMP"
+fi
 
-    debugfs -R "rdump / $SYSTEM_DUMP" "$SYSTEM_IMAGE"
+mkdir -p "$SYSTEM_DUMP"
 
-    echo
-    echo "[+] Moving extracted system to:"
-    echo "    $STOCK_DIR/system"
+debugfs -R "rdump / $SYSTEM_DUMP" "$SYSTEM_IMAGE"
 
-    mv "$SYSTEM_DUMP" "$STOCK_DIR/system"
+echo
+echo "[+] Moving extracted system to:"
+echo "    $STOCK_DIR/system"
+
+mv "$SYSTEM_DUMP" "$STOCK_DIR/system"
+```
 
 else
-    echo
-    echo "[+] Stock system already exists:"
-    echo "    $STOCK_DIR/system"
-    echo "[+] Skipping system.image extraction."
+echo
+echo "[+] Stock system already exists:"
+echo "    $STOCK_DIR/system"
+echo "[+] Skipping system.image extraction."
 fi
 
 # ------------------------------------------
+
 # Verify system extraction
+
 # ------------------------------------------
 
 if [ ! -d "$STOCK_DIR/system" ]; then
-    echo
-    echo "ERROR: Stock system extraction failed!"
-    echo "Missing:"
-    echo "  $STOCK_DIR/system"
-    exit 1
+echo
+echo "ERROR: Stock system extraction failed!"
+echo
+echo "Missing:"
+echo "  $STOCK_DIR/system"
+exit 1
 fi
 
 # ------------------------------------------
+
 # Create vendor symlink if missing
+
 # ------------------------------------------
 
 if [ ! -e "$STOCK_DIR/vendor" ] && [ ! -L "$STOCK_DIR/vendor" ]; then
-    echo
-    echo "[+] Creating vendor symlink..."
+echo
+echo "[+] Creating vendor -> system/vendor symlink..."
 
-    ln -s system/vendor "$STOCK_DIR/vendor"
+```
+ln -s system/vendor "$STOCK_DIR/vendor"
+```
+
 else
-    echo
-    echo "[+] Vendor path already exists:"
-    ls -ld "$STOCK_DIR/vendor"
+echo
+echo "[+] Vendor path already exists:"
+ls -ld "$STOCK_DIR/vendor"
 fi
 
 # ------------------------------------------
+
 # Verify stock extraction
+
 # ------------------------------------------
 
 echo
@@ -258,49 +322,61 @@ echo "[+] Stock directory:"
 ls -la "$STOCK_DIR"
 
 if [ -d "$STOCK_DIR/system/vendor" ]; then
-    echo "[+] system/vendor exists"
+echo "[+] system/vendor exists"
 else
-    echo
-    echo "[!] WARNING: system/vendor does not exist"
-    echo "[!] Checking system contents:"
-    ls -la "$STOCK_DIR/system" | head -50
+echo
+echo "[!] WARNING: system/vendor does not exist"
+echo "[!] Checking system contents:"
+ls -la "$STOCK_DIR/system" | head -50
 fi
 
 # ------------------------------------------
-# Check H872 device tree
-# ------------------------------------------
 
-if [ ! -d "$H872_TREE" ]; then
-    echo
-    echo "ERROR: H872 device tree not found:"
-    echo "  $H872_TREE"
-    exit 1
-fi
-
-if [ ! -f "$H872_TREE/extract-files.sh" ]; then
-    echo
-    echo "ERROR: extract-files.sh not found:"
-    echo "  $H872_TREE/extract-files.sh"
-    exit 1
-fi
-
-# ------------------------------------------
 # Extract proprietary blobs
+
 # ------------------------------------------
 
 echo
 echo "=========================================="
 echo "[+] Extracting proprietary blobs"
 echo "=========================================="
+echo
 
 cd "$H872_TREE"
 
-chmod +x extract-files.sh
+# Python extract-utils extraction.
 
-./extract-files.sh "$STOCK_DIR"
+#
+
+# The H872 extract-files.py should handle its
+
+# common device trees if device_with_commons()
+
+# is configured in the Python migration.
+
+python3 extract-files.py "$STOCK_DIR"
 
 # ------------------------------------------
+
+# Verify extraction result
+
+# ------------------------------------------
+
+VENDOR_LGE="$ANDROID_ROOT/vendor/lge"
+
+echo
+if [ -d "$VENDOR_LGE" ]; then
+echo "[+] Vendor directory exists:"
+echo "    $VENDOR_LGE"
+else
+echo "[!] WARNING: Vendor directory was not found:"
+echo "    $VENDOR_LGE"
+fi
+
+# ------------------------------------------
+
 # Complete
+
 # ------------------------------------------
 
 echo
@@ -326,7 +402,7 @@ echo "  $STOCK_DIR"
 
 echo
 echo "Vendor blobs:"
-echo "  $ANDROID_ROOT/vendor/lge"
+echo "  $VENDOR_LGE"
 
 echo
 echo "Done!"
