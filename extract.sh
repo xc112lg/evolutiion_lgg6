@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 ANDROID_ROOT="/tmp/src/android"
 KDZ_FILE="${ANDROID_ROOT}/H87220g_00_1228.kdz"
