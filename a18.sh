@@ -61,6 +61,12 @@ sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("
 export WITH_ADB_INSECURE=true
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/blur.sh)
 
+sed -i '/# Add wlan to PRODUCT_SOONG_NAMESPACES/,/hardware\/qcom-caf\/wlan\/qcwcn/{
+  /# Add wlan to PRODUCT_SOONG_NAMESPACES/i\
+ifeq ($(BOARD_WLAN_DEVICE),qcwcn)
+  /hardware\/qcom-caf\/wlan\/qcwcn$/a\
+endif
+}' hardware/qcom-caf/common/BoardConfigQcom.mk
 
 if grep -q 'debug.SetMemoryLimit(40 \* 1024 \* 1024 \* 1024)' build/soong/cmd/soong_build/main.go; then
     echo "Soong memory limit patch already applied, skipping."
