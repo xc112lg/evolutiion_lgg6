@@ -14,7 +14,7 @@ rm -rf hardware/qcom-caf/common
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lf
 repo init -u https://github.com/Evolution-X/manifest -b cnb --git-lfs --depth=1 
 #repo init -u https://github.com/crdroidandroid/android.git -b 15.0 --git-lfs --depth=1
-git clone https://github.com/xc112lg/local_manifests --depth 1 -b a17 .repo/local_manifests
+git clone https://github.com/xc112lg/local_manifests --depth 1 -b a18 .repo/local_manifests
 # repo sync -c -j64 --force-sync --no-clone-bundle --optimized-fetch  --no-tags >/dev/null 2>&1
 # /opt/crave/resync.sh
 curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/resync.sh | bash
@@ -32,50 +32,9 @@ grep -q 'errno != EINVAL && errno != ENOSYS' bionic/libc/upstream-openbsd/androi
 
 #perl -0777 -pi -e 's/^cc_prebuilt_library_shared \{\n\tname: "libwifi-hal-ctrl",.*?\n\}\n\n?//ms' vendor/lge/msm8996-common/Android.bp
 
-sed -i 's/libbinder-v32/libbinder/g; s/libprotobuf-cpp-lite-v29/libprotobuf-cpp-lite/g' vendor/lge/msm8996-common/Android.bp
-
-sed -i '/name: "libkeystore_binder",/,/^}$/{
-  s/prefer: true,/prefer: true,\n\tcheck_elf_files: false,/
-}' vendor/lge/msm8996-common/Android.bp
-
-
-sed -i '/name: "libwvdrmengine",/,/^}$/{
-  s/prefer: true,/prefer: true,\n\tcheck_elf_files: false,/
-}' vendor/lge/msm8996-common/Android.bp
-
-sed -i '/name: "libwvhidl",/,/^}$/{
-  s/prefer: true,/prefer: true,\n\tcheck_elf_files: false,/
-}' vendor/lge/msm8996-common/Android.bp
-
-
-sed -i '/LOCAL_MODULE       := init.radio.sh/,/include \$(BUILD_PREBUILT)/{
-  s/LOCAL_VENDOR_MODULE    := true/LOCAL_VENDOR_MODULE    := true\nLOCAL_CHECK_ELF_FILES := false/
-}' device/lge/g6-common/rootdir/Android.mk
-
-sed -i '/# Add wlan to PRODUCT_SOONG_NAMESPACES/,/hardware\/qcom-caf\/wlan\/qcwcn/{
-  /# Add wlan to PRODUCT_SOONG_NAMESPACES/i\
-ifeq ($(BOARD_WLAN_DEVICE),qcwcn)
-  /hardware\/qcom-caf\/wlan\/qcwcn$/a\
-endif
-}' hardware/qcom-caf/common/BoardConfigQcom.mk
-
-
-mkdir -p device/lge/msm8996-common/sepolicy/vendor-user
-if [ ! -f device/lge/msm8996-common/sepolicy/vendor-user/file.te ]; then
-    echo 'type sensors_data_file, file_type, data_file_type;' > device/lge/msm8996-common/sepolicy/vendor-user/file.te
-fi
-grep -q "sepolicy/vendor-user" device/lge/msm8996-common/BoardConfigCommon.mk || cat >> device/lge/msm8996-common/BoardConfigCommon.mk << 'EOF'
-
-ifeq ($(TARGET_BUILD_VARIANT),user)
-BOARD_VENDOR_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy/vendor-user $(BOARD_VENDOR_SEPOLICY_DIRS)
-endif
-EOF
-
 grep -q '^[[:space:]]*# props\.append("ro\.adb\.secure=1")' build/soong/scripts/gen_build_prop.py ||
 sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("ro.adb.secure=1")/' build/soong/scripts/gen_build_prop.py
 #cat build/soong/scripts/gen_build_prop.py
-
-grep -qxF 'set_prop(priv_app, debug_tracing_desktop_mode_visible_tasks_prop)' system/sepolicy/private/priv_app.te || echo 'set_prop(priv_app, debug_tracing_desktop_mode_visible_tasks_prop)' >> system/sepolicy/private/priv_app.te
 export WITH_ADB_INSECURE=true
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/blur.sh)
 
