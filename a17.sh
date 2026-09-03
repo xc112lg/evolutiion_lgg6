@@ -8,7 +8,7 @@ rm -rf device/lge vendor/lineage-priv/keys
 rm -rf vendor/lge/ kernel/lge/msm8996
 rm -rf hardware/qcom-caf/msm8996
 rm -rf hardware/qcom-caf/common 
-rm -rf bionic
+#rm -rf bionic
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lf
@@ -37,6 +37,13 @@ sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("
 #cat build/soong/scripts/gen_build_prop.py
 export WITH_ADB_INSECURE=true
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/blur.sh)
+
+sed -i '/# Add wlan to PRODUCT_SOONG_NAMESPACES/,/hardware\/qcom-caf\/wlan\/qcwcn/{
+  /# Add wlan to PRODUCT_SOONG_NAMESPACES/i\
+ifeq ($(BOARD_WLAN_DEVICE),qcwcn)
+  /hardware\/qcom-caf\/wlan\/qcwcn$/a\
+endif
+}' hardware/qcom-caf/common/BoardConfigQcom.mk
 
 
 if grep -q 'debug.SetMemoryLimit(40 \* 1024 \* 1024 \* 1024)' build/soong/cmd/soong_build/main.go; then
