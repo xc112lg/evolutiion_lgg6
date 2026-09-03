@@ -51,12 +51,12 @@ export TARGET_ENABLE_BLUR=true
 #   s/LOCAL_VENDOR_MODULE    := true/LOCAL_VENDOR_MODULE    := true\nLOCAL_CHECK_ELF_FILES := false/
 # }' device/lge/g6-common/rootdir/Android.mk
 
-# sed -i '/# Add wlan to PRODUCT_SOONG_NAMESPACES/,/hardware\/qcom-caf\/wlan\/qcwcn/{
-#   /# Add wlan to PRODUCT_SOONG_NAMESPACES/i\
-# ifeq ($(BOARD_WLAN_DEVICE),qcwcn)
-#   /hardware\/qcom-caf\/wlan\/qcwcn$/a\
-# endif
-# }' hardware/qcom-caf/common/BoardConfigQcom.mk
+sed -i '/# Add wlan to PRODUCT_SOONG_NAMESPACES/,/hardware\/qcom-caf\/wlan\/qcwcn/{
+  /# Add wlan to PRODUCT_SOONG_NAMESPACES/i\
+ifeq ($(BOARD_WLAN_DEVICE),qcwcn)
+  /hardware\/qcom-caf\/wlan\/qcwcn$/a\
+endif
+}' hardware/qcom-caf/common/BoardConfigQcom.mk
 
 
 # mkdir -p device/lge/msm8996-common/sepolicy/vendor-user
