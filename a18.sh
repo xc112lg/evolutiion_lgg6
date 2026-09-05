@@ -69,12 +69,7 @@ endif
 }' hardware/qcom-caf/common/BoardConfigQcom.mk
 
 
-if grep -q 'debug.SetMemoryLimit(30 \* 1024 \* 1024 \* 1024)' build/soong/cmd/soong_build/main.go; then
-    echo "Soong memory limit patch already applied, skipping."
-else
-    curl -Ls https://github.com/xc112lg/build_soong/commit/7111ebeb327d06bb06a4ccfa1ebf6a0db7791782.patch | \
-        git -C build/soong am
-fi
+
 export ANDROID_JACK_VM_ARGS="-Xmx2048M"
 export SOONG_LINK_JAVA_JOBS=6
 source build/envsetup.sh
