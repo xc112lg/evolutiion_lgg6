@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests/
 rm -rf device/lge vendor/lineage-priv/keys
 rm -rf vendor/lge/ kernel/lge/msm8996
 rm -rf hardware/qcom-caf
-rm -rf bionic
+#rm -rf bionic
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
 #repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --depth=1 --git-lf
