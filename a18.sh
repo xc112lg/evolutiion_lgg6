@@ -76,7 +76,7 @@ export SOONG_LINK_JAVA_JOBS=6
 source build/envsetup.sh
 
 
-lunch lineage_h872-cp2a-eng
+lunch lineage_h872-cp2a-userdebug
 #lunch lineage_h872-bp4a-userdebug
 # breakfast h872
 m evolution
