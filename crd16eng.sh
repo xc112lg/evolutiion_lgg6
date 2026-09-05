@@ -93,10 +93,10 @@ m bacon
 
 
 
-# lunch lineage_h870d-bp4a-userdebug
-# make installclean
-# #make clean # one time
-# m bacon
+lunch lineage_h870d-bp4a-userdebug
+make installclean
+#make clean # one time
+m bacon
 #m evolution
 
 #curl -sf https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/upevo.sh  | bash >/dev/null 2>&1
