@@ -76,7 +76,7 @@ else
         git -C build/soong am
 fi
 export ANDROID_JACK_VM_ARGS="-Xmx2048M"
-export SOONG_LINK_JAVA_JOBS=2
+export SOONG_LINK_JAVA_JOBS=6
 source build/envsetup.sh
 
 
