@@ -8,6 +8,7 @@ rm -rf device/lge vendor/lineage-priv/keys
 rm -rf vendor/lge/ kernel/lge/msm8996
 rm -rf hardware/qcom-caf/msm8996
 rm -rf hardware/qcom-caf/common 
+ls prebuilts/gcc
 rm -rf prebuilts/gcc
 
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
@@ -19,6 +20,7 @@ git clone https://github.com/xc112lg/local_manifests --depth 1 -b a18 .repo/loca
 # repo sync -c -j64 --force-sync --no-clone-bundle --optimized-fetch  --no-tags >/dev/null 2>&1
 # /opt/crave/resync.sh
 curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/resync.sh | bash
+ls prebuilts/gcc
 export WITH_GMS=false
 export TARGET_USES_PICO_GAPPS=true
 export BUILD_BCR=false
