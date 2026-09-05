@@ -7,7 +7,8 @@ rm -rf .repo/local_manifests/
 rm -rf device/lge vendor/lineage-priv/keys
 rm -rf vendor/lge/ kernel/lge/msm8996
 rm -rf hardware/qcom-caf/msm8996
-rm -rf hardware/qcom-caf/common build/soong
+rm -rf hardware/qcom-caf/common build/soong 
+rm -rf prebuilts/gcc
 
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
