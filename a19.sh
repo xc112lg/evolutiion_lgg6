@@ -8,6 +8,7 @@ rm -rf device/lge vendor/lineage-priv/keys
 rm -rf vendor/lge/ kernel/lge/msm8996
 rm -rf hardware/qcom-caf/msm8996
 rm -rf hardware/qcom-caf/common 
+rm -rf prebuilts/gcc
 
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
@@ -74,7 +75,7 @@ else
     curl -Ls https://github.com/xc112lg/build_soong/commit/7111ebeb327d06bb06a4ccfa1ebf6a0db7791782.patch | \
         git -C build/soong am
 fi
-
+rm -rf prebuilts/gcc
 source build/envsetup.sh
 
 
