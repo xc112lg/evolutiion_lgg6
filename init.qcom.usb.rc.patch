@@ -1,5 +1,5 @@
---- rootdir/etc/init.qcom.usb.rc.orig	2026-08-02 06:22:13.460490533 +0000
-+++ rootdir/etc/init.qcom.usb.rc	2026-08-02 06:23:11.427667878 +0000
+--- init/init.qcom.usb.rc.orig	2026-08-02 06:22:13.460490533 +0000
++++ init/init.qcom.usb.rc	2026-08-02 06:23:11.427667878 +0000
 @@ -1619,70 +1619,324 @@
      setprop sys.usb.state ${sys.usb.config}
  
