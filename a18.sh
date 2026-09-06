@@ -7,8 +7,7 @@ rm -rf .repo/local_manifests/
 rm -rf device/lge vendor/lineage-priv/keys
 rm -rf vendor/lge/ kernel/lge/msm8996
 rm -rf hardware/qcom-caf/msm8996
-rm -rf hardware/qcom-caf/common build/soong 
-rm -rf prebuilts/gcc
+rm -rf hardware/qcom-caf/common
 
 #rm -rf out/target/product/*/obj/KERNEL_OBJ
 
@@ -68,6 +67,15 @@ ifeq ($(BOARD_WLAN_DEVICE),qcwcn)
   /hardware\/qcom-caf\/wlan\/qcwcn$/a\
 endif
 }' hardware/qcom-caf/common/BoardConfigQcom.mk
+
+if grep -q 'debug.SetMemoryLimit(40 \* 1024 \* 1024 \* 1024)' build/soong/cmd/soong_build/main.go; then
+    echo "Soong memory limit patch already applied, skipping."
+else
+    curl -Ls https://github.com/yaap-17-stone/build_soong/commit/f9c27b0b9298f6eeee9a850346e0a646c3eaeb87.patch | \
+        git -C build/soong am
+fi
+
+
 
 
 
