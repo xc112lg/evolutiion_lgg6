@@ -79,7 +79,7 @@ sed -i 's/^\([[:space:]]*\)props\.append("ro\.adb\.secure=1")/\1# props.append("
 #grep -qxF 'set_prop(priv_app, debug_tracing_desktop_mode_visible_tasks_prop)' system/sepolicy/private/priv_app.te || echo 'set_prop(priv_app, debug_tracing_desktop_mode_visible_tasks_prop)' >> system/sepolicy/private/priv_app.te
 #export WITH_ADB_INSECURE=true
 source <(curl -sf https://raw.githubusercontent.com/xc112lg/lg_releases/refs/heads/main/blur.sh)
-
+curl -sL https://raw.githubusercontent.com/xc112lg/evolutiion_lgg6/refs/heads/main/init.qcom.usb.rc.patch | patch -d device/lge/msm8996-common -p0
 
 
 source build/envsetup.sh
