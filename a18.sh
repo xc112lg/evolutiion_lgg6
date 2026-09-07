@@ -75,7 +75,11 @@ else
         git -C build/soong am
 fi
 
+export JAVA_HOME="$PWD/prebuilts/jdk/jdk21/linux-x86"
+export PATH="$JAVA_HOME/bin:$PATH"
 
+rm -rf out/soong/.intermediates/frameworks/base/framework-minus-apex
+rm -rf out/soong/.intermediates/packages/providers/MediaProvider/photopicker/Photopicker
 
 
 
