@@ -78,13 +78,9 @@ fi
 export JAVA_HOME="$PWD/prebuilts/jdk/jdk21/linux-x86"
 export PATH="$JAVA_HOME/bin:$PATH"
 
-rm -rf out/soong/.intermediates/frameworks/base/framework-minus-apex
-rm -rf out/soong/.intermediates/packages/providers/MediaProvider/photopicker/Photopicker
 
 
 
-export ANDROID_JACK_VM_ARGS="-Xmx2048M"
-export SOONG_LINK_JAVA_JOBS=6
 source build/envsetup.sh
 
 
