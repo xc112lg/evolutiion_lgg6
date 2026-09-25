@@ -68,10 +68,18 @@ ifeq ($(BOARD_WLAN_DEVICE),qcwcn)
 endif
 }' hardware/qcom-caf/common/BoardConfigQcom.mk
 
-if grep -q 'debug.SetMemoryLimit(40 \* 1024 \* 1024 \* 1024)' build/soong/cmd/soong_build/main.go; then
+# if grep -q 'debug.SetMemoryLimit(40 \* 1024 \* 1024 \* 1024)' build/soong/cmd/soong_build/main.go; then
+#     echo "Soong memory limit patch already applied, skipping."
+# else
+#     curl -Ls https://github.com/yaap-17-stone/build_soong/commit/f9c27b0b9298f6eeee9a850346e0a646c3eaeb87.patch | \
+#         git -C build/soong am
+# fi
+
+
+if grep -q 'debug.SetMemoryLimit(55 \* 1024 \* 1024 \* 1024)' build/soong/cmd/soong_build/main.go; then
     echo "Soong memory limit patch already applied, skipping."
 else
-    curl -Ls https://github.com/yaap-17-stone/build_soong/commit/f9c27b0b9298f6eeee9a850346e0a646c3eaeb87.patch | \
+    curl -Ls https://github.com/xc112lg/build_soong/commit/79778bd182d3d06aadf8be9e6d8b3abae15bdb77.patch | \
         git -C build/soong am
 fi
 
