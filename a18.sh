@@ -1,8 +1,3 @@
-
-
-
-
-
 rm -rf .repo/local_manifests/
 rm -rf device/lge vendor/lineage-priv/keys
 rm -rf vendor/lge/ kernel/lge/msm8996
@@ -83,8 +78,13 @@ else
         git -C build/soong am
 fi
 
-export JAVA_HOME="$PWD/prebuilts/jdk/jdk21/linux-x86"
+export ANDROID_JAVA_HOME="$PWD/prebuilts/jdk/jdk21/linux-x86"
+export JAVA_HOME="$ANDROID_JAVA_HOME"
 export PATH="$JAVA_HOME/bin:$PATH"
+[ -x "$JAVA_HOME/bin/java" ] || { echo "JDK21 missing: $JAVA_HOME"; exit 1; }
+sudo update-alternatives --install /usr/bin/java java "$JAVA_HOME/bin/java" 2100
+sudo update-alternatives --set java "$JAVA_HOME/bin/java"
+hash -r
 
 
 
@@ -93,6 +93,9 @@ source build/envsetup.sh
 
 
 lunch lineage_h872-cp2a-eng
+export PATH="$PWD/prebuilts/jdk/jdk21/linux-x86/bin:$PATH"
+hash -r
+java -version 2>&1 | head -1
 #lunch lineage_h872-bp4a-userdebug
 # breakfast h872
 m evolution
